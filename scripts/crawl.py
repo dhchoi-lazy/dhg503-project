@@ -21,7 +21,6 @@ def main():
 
     # Map of crawler names to their class objects
     crawler_class_map = {
-        "base_crawler": BaseCrawler,
         "url_extractor": UrlExtractor,
         "image_extractor": ImageExtractor,
         "text_extractor": TextExtractor,
@@ -37,9 +36,7 @@ def main():
             raise ValueError("No crawler configuration found in config.yaml")
 
         for crawler_class_name, crawler_class_config in crawler_config.items():
-            # Get the correct crawler class from the map
             crawler_class = crawler_class_map.get(crawler_class_name)
-
             if not crawler_class:
                 raise ValueError(f"Unknown crawler class: {crawler_class_name}")
             logger = setup_logging(
@@ -56,7 +53,6 @@ def main():
             for source_name, source_config in sources.items():
                 logger.info(f"Running {crawler_class_name} on {source_name}")
 
-                # Get required parameters
                 base_url = source_config.get("base_url")
                 if not base_url:
                     logger.error(f"No Base URL defined for source: {source_name}")
@@ -69,12 +65,12 @@ def main():
                     logger.error(f"No targets defined for source: {source_name}")
                     sys.exit(1)
 
-                # Set URL for targets if not specified
                 for target in targets:
                     if "url" not in target:
                         target["url"] = base_url
 
-                # Set up output directory
+                source_config["targets"] = targets
+
                 output_dir = source_config.get("output_dir", "data/raw")
                 os.makedirs(output_dir, exist_ok=True)
 

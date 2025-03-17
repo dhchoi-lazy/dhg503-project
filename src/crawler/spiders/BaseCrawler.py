@@ -3,6 +3,11 @@ import requests
 import random
 import aiohttp
 from aiohttp import ClientSession
+import urllib3
+import time
+
+# Disable SSL warnings
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 class BaseCrawler:
@@ -59,19 +64,38 @@ class BaseCrawler:
 
     def fetch_page(self, url):
         """Fetch a page using the requests session."""
-        try:
-            response = self.session.get(url, headers={"User-Agent": self.user_agent})
-            response.raise_for_status()
-            return response.text
-        except requests.RequestException as e:
-            self.logger.error(f"Failed to fetch {url}: {e}")
-            return None
+        retry_count = 0
+
+        while retry_count <= self.retries:
+            try:
+                response = self.session.get(
+                    url, headers={"User-Agent": self.user_agent}, verify=False
+                )
+                response.raise_for_status()
+                return response.text
+            except requests.RequestException as e:
+                retry_count += 1
+                if retry_count > self.retries:
+                    self.logger.error(
+                        f"Failed to fetch {url} after {self.retries} retries: {e}"
+                    )
+                    return None
+
+                # Calculate backoff time
+                backoff_time = self.backoff_factor * (2 ** (retry_count - 1))
+                self.logger.warning(
+                    f"Retry {retry_count}/{self.retries} for {url} after {backoff_time}s"
+                )
+                time.sleep(backoff_time)
+
+                # Try with a new user agent on each retry
+                self.refresh_user_agent()
 
     async def fetch_page_async(self, url):
         """Fetch a page asynchronously using aiohttp."""
         session = await self.async_session
         try:
-            async with session.get(url) as response:
+            async with session.get(url, ssl=False) as response:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:

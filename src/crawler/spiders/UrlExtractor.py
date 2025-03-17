@@ -2,11 +2,12 @@ from urllib.parse import urljoin
 from src.crawler.utils.files import save_json
 from src.crawler.utils.url import construct_url
 from tqdm import tqdm
-from src.crawler.spiders.BaseCrawler import BaseCrawler
+from src.crawler.spiders.ElementExtractor import ElementExtractor
 from lxml import html
+import hashlib
 
 
-class UrlExtractor(BaseCrawler):
+class UrlExtractor(ElementExtractor):
     def __init__(
         self,
         **kwargs,
@@ -15,21 +16,7 @@ class UrlExtractor(BaseCrawler):
         self.kwargs = kwargs
         self.targets = kwargs.get("targets")
 
-    def fetch_page(self, url):
-        """Override fetch_page to trace what's happening with the response."""
-        response = super().fetch_page(url)
-        self.logger.debug(f"fetch_page returned type: {type(response)}")
-        if response is not None:
-            self.logger.debug(f"Response is of type: {type(response)}")
-            # This is the key issue - we're returning a string but somewhere code expects an object with .text
-            # Add detailed logging to help pinpoint the issue
-            if hasattr(response, "text"):
-                self.logger.debug("Response has 'text' attribute")
-            else:
-                self.logger.debug("Response does NOT have 'text' attribute")
-        return response
-
-    def crawl(self):
+    def crawl_recursively(self):
 
         initial_target = self.targets[0]
         initial_url = construct_url(
@@ -59,11 +46,14 @@ class UrlExtractor(BaseCrawler):
             current_urls = next_urls
             self.logger.info(f"Found {len(current_urls)} URLs to process at next depth")
             for url in current_urls:
+                # Create a hash key from the URL
+                url_hash = hashlib.md5(url["url"].encode()).hexdigest()
                 result_urls.append(
                     {
                         "depth": depth,
                         "url": url["url"],
                         "path": url["path"],
+                        "key": url_hash,
                     }
                 )
             # If this is the last depth or no URLs were found, we're done

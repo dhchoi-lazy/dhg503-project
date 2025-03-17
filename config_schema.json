@@ -51,6 +51,7 @@
             "properties": {
               "output_dir": { "type": "string" },
               "base_url": { "type": "string" },
+              "save_images": { "type": "boolean" },
               "targets": {
                 "type": "array",
                 "items": {
@@ -58,7 +59,6 @@
                   "properties": {
                     "xpath": { "type": "string" },
                     "url": { "type": "string" },
-                    "save_images": { "type": "boolean" },
                     "params": {
                       "type": "object",
                       "additionalProperties": true
@@ -153,22 +153,28 @@
             "properties": {
               "base_url": { "type": "string" },
               "output_dir": { "type": "string" },
+              "input_file": { "type": "string" },
+              "resumable": { "type": "boolean" },
               "targets": {
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
-                    "input_file": { "type": "string" },
-                    "xpath": { "type": "string" },
-                    "file_key": { "type": "string" },
-                    "resumable": { "type": "boolean" }
+                    "url": { "type": "string" },
+                    "xpath": { "type": "string" }
                   },
-                  "required": ["input_file", "xpath", "file_key", "resumable"],
+                  "required": ["url", "xpath"],
                   "additionalProperties": false
                 }
               }
             },
-            "required": ["base_url", "output_dir", "targets"],
+            "required": [
+              "base_url",
+              "output_dir",
+              "input_file",
+              "resumable",
+              "targets"
+            ],
             "additionalProperties": false
           }
         }

@@ -8,18 +8,26 @@ crawler:
           - xpath: "//a[contains(., 'China')]"
             url: "https://www.scmp.com/"
 
+  html_crawler:
+    sources:
+      scmp_htmls:
+        output_dir: "data/raw/scmp/html"
+        base_url: "https://www.scmp.com/"
+        input_file: "data/raw/scmp/urls/scmp_urls.json"
+        resumable: True
+        targets:
+          - xpath: "//article"
+            url: "https://www.scmp.com/"
+
   image_extractor:
     sources:
-      scmp_images:
+      scmp_images: # name of source.
         output_dir: "data/raw/scmp/images"
         base_url: "https://www.scmp.com/"
+        save_images: true
         targets:
-          - xpath: "//div[contains(@class, 'article-img')]//img"
-            url: "https://www.scmp.com/news/china"
-            save_images: true
-          - xpath: "//figure//img"
-            url: "https://www.scmp.com/news/asia"
-            save_images: true
+          - xpath: "//img"
+            url: "https://www.scmp.com/"
 
   text_extractor:
     sources:

@@ -1,0 +1,1569 @@
+2025-03-10 17:27:25,515 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:27:25,515 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:27:25,515 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:27:25,515 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:27:25,516 - ImageExtractor - INFO - Processing target 1/2
+2025-03-10 17:27:25,622 - ImageExtractor - INFO - Found 0 image elements with XPath '//div[contains(@class, 'article-img')]//img'
+2025-03-10 17:27:25,623 - ImageExtractor - INFO - Found 0 images from https://www.scmp.com/news/china
+2025-03-10 17:27:25,623 - ImageExtractor - INFO - Processing target 2/2
+2025-03-10 17:27:25,725 - ImageExtractor - INFO - Found 23 image elements with XPath '//figure//img'
+2025-03-10 17:27:25,726 - ImageExtractor - INFO - Found 23 images from https://www.scmp.com/news/asia
+2025-03-10 17:27:25,832 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5f7889bb-8337-4e9e-899a-1e6c01761a08_2e4e9d53.jpg
+2025-03-10 17:27:25,872 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/d405ac9d-786b-466d-b6c9-e8db72ff069e_50e7789d.jpg
+2025-03-10 17:27:25,912 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/24fde0d7-f7d2-4347-93f9-a68d8c300abf_ae03837f.jpg
+2025-03-10 17:27:25,960 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/aa867448-c1f5-49a4-ba1a-63e7e34d3341_2d7aac33.jpg
+2025-03-10 17:27:25,996 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/096dd04f-7f2b-4f0e-ba17-d028dadef5e5_628b7458.jpg
+2025-03-10 17:27:26,050 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c9f8455e-c523-42f6-a0e3-10865a761fb7_1b5cf57f.jpg
+2025-03-10 17:27:26,080 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/2cdf3064-7242-49d4-aec2-a9e8f14ede09_b67d74e2.jpg
+2025-03-10 17:27:26,148 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/daa6c445-fd48-4d7b-b464-af2bf330bc90_479fc1ea.jpg
+2025-03-10 17:27:26,228 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/da8c4d65-d258-4ef8-a109-dcbe8a733423_f445f2fe.jpg
+2025-03-10 17:27:26,228 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/daa6c445-fd48-4d7b-b464-af2bf330bc90_479fc1ea.jpg
+2025-03-10 17:27:26,228 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/d405ac9d-786b-466d-b6c9-e8db72ff069e_50e7789d.jpg
+2025-03-10 17:27:26,282 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/57383c03-b798-415d-b254-1fc2cdcb16e7_539dbbee.jpg
+2025-03-10 17:27:26,282 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/24fde0d7-f7d2-4347-93f9-a68d8c300abf_ae03837f.jpg
+2025-03-10 17:27:26,321 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/3709732e-c72f-4542-ba3c-559168ba7bb9_37b6bbf9.jpg
+2025-03-10 17:27:26,394 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/nicholas_spiro.jpg
+2025-03-10 17:27:26,419 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/1297a.jpg
+2025-03-10 17:27:26,445 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/phar_kim_beng.jpg
+2025-03-10 17:27:26,471 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/IMG_1082.jpg
+2025-03-10 17:27:26,495 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Joseph Sipalan Mug1.jpg
+2025-03-10 17:27:26,531 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/CLEAN-THUMB.jpg
+2025-03-10 17:27:26,552 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/clean.jpg
+2025-03-10 17:27:26,577 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/CLEAN---thumbnail.jpg
+2025-03-10 17:27:26,577 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/clean-thumb.jpg
+2025-03-10 17:27:26,578 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:27:26,578 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:27:26,578 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-10 17:27:26,578 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-10 17:27:26,578 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-10 17:27:26,578 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-10 17:27:26,579 - TextExtractor - INFO - Processing target 1/1
+2025-03-10 17:27:26,689 - TextExtractor - INFO - Found 36 text elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-10 17:27:26,690 - TextExtractor - INFO - Found 36 text items from https://www.scmp.com/news/china
+2025-03-10 17:27:26,690 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-10 17:27:26,690 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-10 17:28:25,202 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:28:25,203 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:28:25,203 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:28:25,203 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:28:25,204 - ImageExtractor - INFO - Processing target 1/2
+2025-03-10 17:28:25,351 - ImageExtractor - INFO - Found 0 image elements with XPath '//div[contains(@class, 'article-img')]//img'
+2025-03-10 17:28:25,353 - ImageExtractor - INFO - Found 0 images from https://www.scmp.com/news/china
+2025-03-10 17:28:25,353 - ImageExtractor - INFO - Processing target 2/2
+2025-03-10 17:28:25,491 - ImageExtractor - INFO - Found 23 image elements with XPath '//figure//img'
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Found 23 images from https://www.scmp.com/news/asia
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5f7889bb-8337-4e9e-899a-1e6c01761a08_2e4e9d53.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/d405ac9d-786b-466d-b6c9-e8db72ff069e_50e7789d.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/24fde0d7-f7d2-4347-93f9-a68d8c300abf_ae03837f.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/aa867448-c1f5-49a4-ba1a-63e7e34d3341_2d7aac33.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/096dd04f-7f2b-4f0e-ba17-d028dadef5e5_628b7458.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c9f8455e-c523-42f6-a0e3-10865a761fb7_1b5cf57f.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/2cdf3064-7242-49d4-aec2-a9e8f14ede09_b67d74e2.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/daa6c445-fd48-4d7b-b464-af2bf330bc90_479fc1ea.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/da8c4d65-d258-4ef8-a109-dcbe8a733423_f445f2fe.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/daa6c445-fd48-4d7b-b464-af2bf330bc90_479fc1ea.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/d405ac9d-786b-466d-b6c9-e8db72ff069e_50e7789d.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/57383c03-b798-415d-b254-1fc2cdcb16e7_539dbbee.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/24fde0d7-f7d2-4347-93f9-a68d8c300abf_ae03837f.jpg
+2025-03-10 17:28:25,493 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/3709732e-c72f-4542-ba3c-559168ba7bb9_37b6bbf9.jpg
+2025-03-10 17:28:25,494 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/nicholas_spiro.jpg
+2025-03-10 17:28:25,494 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/1297a.jpg
+2025-03-10 17:28:25,494 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/phar_kim_beng.jpg
+2025-03-10 17:28:25,494 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/IMG_1082.jpg
+2025-03-10 17:28:25,494 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Joseph Sipalan Mug1.jpg
+2025-03-10 17:28:25,494 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/CLEAN-THUMB.jpg
+2025-03-10 17:28:25,494 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/clean.jpg
+2025-03-10 17:28:25,494 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/CLEAN---thumbnail.jpg
+2025-03-10 17:28:25,494 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/clean-thumb.jpg
+2025-03-10 17:28:25,494 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:28:25,494 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:28:25,495 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-10 17:28:25,495 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-10 17:28:25,495 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-10 17:28:25,495 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-10 17:28:25,496 - TextExtractor - INFO - Processing target 1/1
+2025-03-10 17:28:25,833 - TextExtractor - INFO - Found 36 text elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-10 17:28:25,835 - TextExtractor - INFO - Found 36 text items from https://www.scmp.com/news/china
+2025-03-10 17:28:25,836 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-10 17:28:25,836 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-10 17:28:35,033 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:28:35,033 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:28:35,033 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:28:35,033 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:28:35,033 - ImageExtractor - INFO - Processing target 1/2
+2025-03-10 17:28:35,090 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china: 403 Client Error: Forbidden for url: https://www.scmp.com/news/china
+2025-03-10 17:28:35,090 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china
+2025-03-10 17:28:35,090 - ImageExtractor - INFO - Found 0 images from https://www.scmp.com/news/china
+2025-03-10 17:28:35,090 - ImageExtractor - INFO - Processing target 2/2
+2025-03-10 17:28:35,127 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/asia: 403 Client Error: Forbidden for url: https://www.scmp.com/news/asia
+2025-03-10 17:28:35,127 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/asia
+2025-03-10 17:28:35,128 - ImageExtractor - INFO - Found 0 images from https://www.scmp.com/news/asia
+2025-03-10 17:28:35,128 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:28:35,128 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:28:35,128 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-10 17:28:35,128 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-10 17:28:35,128 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-10 17:28:35,128 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-10 17:28:35,129 - TextExtractor - INFO - Processing target 1/1
+2025-03-10 17:28:35,204 - TextExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china: 403 Client Error: Forbidden for url: https://www.scmp.com/news/china
+2025-03-10 17:28:35,204 - TextExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china
+2025-03-10 17:28:35,204 - TextExtractor - INFO - Found 0 text items from https://www.scmp.com/news/china
+2025-03-10 17:28:35,205 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-10 17:28:35,205 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-10 17:33:57,705 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:33:57,706 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:33:57,706 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:33:57,706 - src.utils.logging - INFO - Running image_extractor on scmp_image1
+2025-03-10 17:33:57,706 - ImageExtractor - INFO - Processing target 1/2
+2025-03-10 17:33:57,767 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china: 403 Client Error: Forbidden for url: https://www.scmp.com/news/china
+2025-03-10 17:33:57,767 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china
+2025-03-10 17:33:57,767 - ImageExtractor - INFO - Found 0 images from https://www.scmp.com/news/china
+2025-03-10 17:33:57,767 - ImageExtractor - INFO - Processing target 2/2
+2025-03-10 17:33:57,803 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/asia: 403 Client Error: Forbidden for url: https://www.scmp.com/news/asia
+2025-03-10 17:33:57,803 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/asia
+2025-03-10 17:33:57,803 - ImageExtractor - INFO - Found 0 images from https://www.scmp.com/news/asia
+2025-03-10 17:33:57,803 - src.utils.logging - INFO - Completed crawling for source: scmp_image1
+2025-03-10 17:33:57,803 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:33:57,804 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-10 17:33:57,804 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-10 17:33:57,804 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-10 17:33:57,804 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-10 17:33:57,805 - TextExtractor - INFO - Processing target 1/1
+2025-03-10 17:33:57,966 - TextExtractor - INFO - Found 36 text elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-10 17:33:57,968 - TextExtractor - INFO - Found 36 text items from https://www.scmp.com/news/china
+2025-03-10 17:33:57,969 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-10 17:33:57,969 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-10 17:34:39,931 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:34:39,932 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:34:39,932 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:34:39,932 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:34:39,933 - ImageExtractor - INFO - Processing target 1/2
+2025-03-10 17:34:39,978 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china: 403 Client Error: Forbidden for url: https://www.scmp.com/news/china
+2025-03-10 17:34:39,979 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china
+2025-03-10 17:34:39,979 - ImageExtractor - INFO - Found 0 images from https://www.scmp.com/news/china
+2025-03-10 17:34:39,979 - ImageExtractor - INFO - Processing target 2/2
+2025-03-10 17:34:40,020 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/asia: 403 Client Error: Forbidden for url: https://www.scmp.com/news/asia
+2025-03-10 17:34:40,020 - ImageExtractor - ERROR - Failed to fetch https://www.scmp.com/news/asia
+2025-03-10 17:34:40,020 - ImageExtractor - INFO - Found 0 images from https://www.scmp.com/news/asia
+2025-03-10 17:34:40,020 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:34:40,021 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:34:40,021 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-10 17:34:40,021 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-10 17:34:40,021 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-10 17:34:40,021 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-10 17:34:40,022 - TextExtractor - INFO - Processing target 1/1
+2025-03-10 17:34:40,141 - TextExtractor - INFO - Found 36 text elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-10 17:34:40,142 - TextExtractor - INFO - Found 36 text items from https://www.scmp.com/news/china
+2025-03-10 17:34:40,144 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-10 17:34:40,144 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-10 17:35:01,806 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:35:01,806 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:35:01,806 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:35:01,806 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:35:01,807 - ImageExtractor - INFO - Processing target 1/2
+2025-03-10 17:35:01,958 - ImageExtractor - INFO - Found 0 image elements with XPath '//div[contains(@class, 'article-img')]//img'
+2025-03-10 17:35:01,959 - ImageExtractor - INFO - Found 0 images from https://www.scmp.com/news/china
+2025-03-10 17:35:01,959 - ImageExtractor - INFO - Processing target 2/2
+2025-03-10 17:35:02,066 - ImageExtractor - INFO - Found 23 image elements with XPath '//figure//img'
+2025-03-10 17:35:02,068 - ImageExtractor - INFO - Found 23 images from https://www.scmp.com/news/asia
+2025-03-10 17:35:02,189 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/5f7889bb-8337-4e9e-899a-1e6c01761a08_2e4e9d53.jpg
+2025-03-10 17:35:02,250 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/d405ac9d-786b-466d-b6c9-e8db72ff069e_50e7789d.jpg
+2025-03-10 17:35:02,317 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/24fde0d7-f7d2-4347-93f9-a68d8c300abf_ae03837f.jpg
+2025-03-10 17:35:02,362 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/aa867448-c1f5-49a4-ba1a-63e7e34d3341_2d7aac33.jpg
+2025-03-10 17:35:02,405 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/096dd04f-7f2b-4f0e-ba17-d028dadef5e5_628b7458.jpg
+2025-03-10 17:35:02,461 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/c9f8455e-c523-42f6-a0e3-10865a761fb7_1b5cf57f.jpg
+2025-03-10 17:35:02,516 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/2cdf3064-7242-49d4-aec2-a9e8f14ede09_b67d74e2.jpg
+2025-03-10 17:35:02,592 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/daa6c445-fd48-4d7b-b464-af2bf330bc90_479fc1ea.jpg
+2025-03-10 17:35:02,693 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/da8c4d65-d258-4ef8-a109-dcbe8a733423_f445f2fe.jpg
+2025-03-10 17:35:02,693 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/daa6c445-fd48-4d7b-b464-af2bf330bc90_479fc1ea.jpg
+2025-03-10 17:35:02,693 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/d405ac9d-786b-466d-b6c9-e8db72ff069e_50e7789d.jpg
+2025-03-10 17:35:02,760 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/57383c03-b798-415d-b254-1fc2cdcb16e7_539dbbee.jpg
+2025-03-10 17:35:02,760 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/24fde0d7-f7d2-4347-93f9-a68d8c300abf_ae03837f.jpg
+2025-03-10 17:35:02,794 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/3709732e-c72f-4542-ba3c-559168ba7bb9_37b6bbf9.jpg
+2025-03-10 17:35:02,861 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/nicholas_spiro.jpg
+2025-03-10 17:35:02,891 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/1297a.jpg
+2025-03-10 17:35:02,918 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/phar_kim_beng.jpg
+2025-03-10 17:35:02,947 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/IMG_1082.jpg
+2025-03-10 17:35:02,974 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/Joseph Sipalan Mug1.jpg
+2025-03-10 17:35:03,016 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/CLEAN-THUMB.jpg
+2025-03-10 17:35:03,048 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/clean.jpg
+2025-03-10 17:35:03,074 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/CLEAN---thumbnail.jpg
+2025-03-10 17:35:03,074 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/clean-thumb.jpg
+2025-03-10 17:35:03,074 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:35:03,075 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:35:03,075 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-10 17:35:03,075 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-10 17:35:03,075 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-10 17:35:03,075 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-10 17:35:03,076 - TextExtractor - INFO - Processing target 1/1
+2025-03-10 17:35:03,121 - TextExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china: 403 Client Error: Forbidden for url: https://www.scmp.com/news/china
+2025-03-10 17:35:03,121 - TextExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china
+2025-03-10 17:35:03,121 - TextExtractor - INFO - Found 0 text items from https://www.scmp.com/news/china
+2025-03-10 17:35:03,122 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-10 17:35:03,122 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-10 17:41:15,149 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:41:15,149 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:41:15,149 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:41:15,149 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:41:15,150 - ImageExtractor - INFO - Processing target 1/2
+2025-03-10 17:41:15,280 - ImageExtractor - INFO - Found 24 image elements with XPath '//figure//img'
+2025-03-10 17:41:15,282 - ImageExtractor - INFO - Found 24 images from https://www.scmp.com/news/china
+2025-03-10 17:41:15,337 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/75391c5a-71ee-4490-8d00-26ce92224e67_6ddf4941.jpg
+2025-03-10 17:41:15,396 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/eb961d52-3c25-4303-9110-5b351fe983c3_c708d027.jpg
+2025-03-10 17:41:15,434 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-10 17:41:15,497 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/08a88af3-52c7-4217-8fb1-7bfded356d29_b09a5677.jpg
+2025-03-10 17:41:15,556 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/3d63850c-6496-41de-b315-44b1d8e6576d_e276a117.jpg
+2025-03-10 17:41:15,608 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/b47b1d23-b796-4948-b89f-ad974b907b50_2700c744.jpg
+2025-03-10 17:41:15,671 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/8909cdbe-d146-4995-9d3d-87bac022998b_0e98c5fc.jpg
+2025-03-10 17:41:15,710 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/028e5f0c-323a-471a-8d41-8a59711f5b78_d896e829.jpg
+2025-03-10 17:41:15,741 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/70a212d1-ce5d-4bed-9b6f-232cf1b0b112_98f92166.jpg
+2025-03-10 17:41:15,741 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/75391c5a-71ee-4490-8d00-26ce92224e67_6ddf4941.jpg
+2025-03-10 17:41:15,811 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/4c1d77af-da74-4523-9598-61792abee747_32f147f2.jpg
+2025-03-10 17:41:15,862 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/49e16c26-e4b8-4174-adbc-924e6f8f70f4_9c1de8ad.jpg
+2025-03-10 17:41:15,862 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/3d63850c-6496-41de-b315-44b1d8e6576d_e276a117.jpg
+2025-03-10 17:41:15,902 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/297aa9ee-a039-4008-8053-933fdf5aa153_3c7a1856.jpg
+2025-03-10 17:41:15,964 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/劉寧榮教授照片.jpg
+2025-03-10 17:41:15,992 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/rowley_san2_2.jpg
+2025-03-10 17:41:16,024 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/lijia_zhang.jpg
+2025-03-10 17:41:16,049 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/li_xing_photo.jpg
+2025-03-10 17:41:16,074 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/rng01338v2b_0.jpg
+2025-03-10 17:41:16,098 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/terry.jpg
+2025-03-10 17:41:16,119 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/clean_1.jpg
+2025-03-10 17:41:16,151 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/Thu_Clean.jpg
+2025-03-10 17:41:16,175 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/8418830_HD-50i_20250307102405876.mp4_.00_00_18_22.Still001.jpg
+2025-03-10 17:41:16,211 - ImageExtractor - INFO - Saved image: data/raw/scmp/images1/still2.jpg
+2025-03-10 17:41:16,211 - ImageExtractor - INFO - Processing target 2/2
+2025-03-10 17:41:16,310 - ImageExtractor - INFO - Found 23 image elements with XPath '//figure//img'
+2025-03-10 17:41:16,311 - ImageExtractor - INFO - Found 23 images from https://www.scmp.com/news/asia
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/5f7889bb-8337-4e9e-899a-1e6c01761a08_2e4e9d53.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/d405ac9d-786b-466d-b6c9-e8db72ff069e_50e7789d.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/24fde0d7-f7d2-4347-93f9-a68d8c300abf_ae03837f.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/aa867448-c1f5-49a4-ba1a-63e7e34d3341_2d7aac33.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/096dd04f-7f2b-4f0e-ba17-d028dadef5e5_628b7458.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/c9f8455e-c523-42f6-a0e3-10865a761fb7_1b5cf57f.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/2cdf3064-7242-49d4-aec2-a9e8f14ede09_b67d74e2.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/daa6c445-fd48-4d7b-b464-af2bf330bc90_479fc1ea.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/da8c4d65-d258-4ef8-a109-dcbe8a733423_f445f2fe.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/daa6c445-fd48-4d7b-b464-af2bf330bc90_479fc1ea.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/d405ac9d-786b-466d-b6c9-e8db72ff069e_50e7789d.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/57383c03-b798-415d-b254-1fc2cdcb16e7_539dbbee.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/24fde0d7-f7d2-4347-93f9-a68d8c300abf_ae03837f.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/3709732e-c72f-4542-ba3c-559168ba7bb9_37b6bbf9.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/nicholas_spiro.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/1297a.jpg
+2025-03-10 17:41:16,312 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/phar_kim_beng.jpg
+2025-03-10 17:41:16,313 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/IMG_1082.jpg
+2025-03-10 17:41:16,313 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/Joseph Sipalan Mug1.jpg
+2025-03-10 17:41:16,313 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/CLEAN-THUMB.jpg
+2025-03-10 17:41:16,313 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/clean.jpg
+2025-03-10 17:41:16,313 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/CLEAN---thumbnail.jpg
+2025-03-10 17:41:16,313 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images1/clean-thumb.jpg
+2025-03-10 17:41:16,313 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:41:16,313 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:41:16,313 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-10 17:41:16,313 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-10 17:41:16,314 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-10 17:41:16,314 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-10 17:41:16,314 - TextExtractor - INFO - Processing target 1/1
+2025-03-10 17:41:16,407 - TextExtractor - INFO - Found 36 text elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-10 17:41:16,408 - TextExtractor - INFO - Found 36 text items from https://www.scmp.com/news/china
+2025-03-10 17:41:16,409 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-10 17:41:16,409 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-10 17:45:25,999 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:45:25,999 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:45:25,999 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:45:25,999 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:45:26,000 - ImageExtractor - INFO - Processing target 1/1
+2025-03-10 17:45:26,284 - ImageExtractor - INFO - Found 0 image elements with XPath '//img[contains(@class,product-img)]'
+2025-03-10 17:45:26,285 - ImageExtractor - INFO - Found 0 images from https://taobao.com
+2025-03-10 17:45:26,286 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:45:26,286 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:45:26,287 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-10 17:45:26,288 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-10 17:45:26,288 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-10 17:45:26,288 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-10 17:45:26,291 - TextExtractor - INFO - Processing target 1/1
+2025-03-10 17:45:26,419 - TextExtractor - INFO - Found 36 text elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-10 17:45:26,421 - TextExtractor - INFO - Found 36 text items from https://www.scmp.com/news/china
+2025-03-10 17:45:26,422 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-10 17:45:26,422 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-10 17:45:35,854 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:45:35,854 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:45:35,854 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:45:35,855 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:45:35,855 - ImageExtractor - INFO - Processing target 1/1
+2025-03-10 17:45:36,047 - ImageExtractor - INFO - Found 0 image elements with XPath '//img[contains(@class,product-img)]'
+2025-03-10 17:45:36,048 - ImageExtractor - INFO - Found 0 images from https://taobao.com
+2025-03-10 17:45:36,049 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:45:36,049 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:45:36,050 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-10 17:45:36,050 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-10 17:45:36,050 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-10 17:45:36,050 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-10 17:45:36,052 - TextExtractor - INFO - Processing target 1/1
+2025-03-10 17:45:36,093 - TextExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china: 403 Client Error: Forbidden for url: https://www.scmp.com/news/china
+2025-03-10 17:45:36,094 - TextExtractor - ERROR - Failed to fetch https://www.scmp.com/news/china
+2025-03-10 17:45:36,094 - TextExtractor - INFO - Found 0 text items from https://www.scmp.com/news/china
+2025-03-10 17:45:36,095 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-10 17:45:36,095 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-10 17:45:53,707 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:45:53,707 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:45:53,707 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:45:53,707 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:45:53,707 - ImageExtractor - INFO - Processing target 1/1
+2025-03-10 17:45:53,872 - ImageExtractor - INFO - Found 0 image elements with XPath '//img[contains(@class,product-img)]'
+2025-03-10 17:45:53,872 - ImageExtractor - INFO - Found 0 images from https://taobao.com
+2025-03-10 17:45:53,873 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:45:53,873 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:46:12,115 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:46:12,115 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:46:12,115 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:46:12,115 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:46:12,119 - ImageExtractor - INFO - Processing target 1/1
+2025-03-10 17:46:12,289 - ImageExtractor - INFO - Found 0 image elements with XPath '//img[contains(@class,product-img)]'
+2025-03-10 17:46:12,290 - ImageExtractor - INFO - Found 0 images from https://taobao.com
+2025-03-10 17:46:12,290 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:46:12,290 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:46:34,544 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:46:34,544 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:46:34,544 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:46:34,544 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:46:34,548 - ImageExtractor - INFO - Processing target 1/1
+2025-03-10 17:46:34,592 - ImageExtractor - INFO - Found 0 image elements with XPath '//img[contains(@class,product-img)]'
+2025-03-10 17:46:34,593 - ImageExtractor - INFO - Found 0 images from https://www.taobao.com/
+2025-03-10 17:46:34,593 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:46:34,593 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:47:19,000 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:47:19,001 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:47:19,001 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:47:19,001 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:47:19,006 - ImageExtractor - INFO - Processing target 1/1
+2025-03-10 17:47:19,177 - ImageExtractor - INFO - Found 0 image elements with XPath '//img'
+2025-03-10 17:47:19,178 - ImageExtractor - INFO - Found 0 images from https://www.taobao.com/
+2025-03-10 17:47:19,178 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:47:19,178 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:48:35,920 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:48:35,920 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:48:35,920 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:48:35,920 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:48:35,926 - ImageExtractor - INFO - Processing target 1/1
+2025-03-10 17:48:36,192 - ImageExtractor - INFO - Found 2 image elements with XPath '//img'
+2025-03-10 17:48:36,193 - ImageExtractor - INFO - Found 2 images from https://www.amazon.com/
+2025-03-10 17:48:36,256 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/Captcha_rbczmrkkfr.jpg
+2025-03-10 17:48:37,150 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/requestId=TKKBQP3DRDKD0K1WE1VH&js=0
+2025-03-10 17:48:37,151 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:48:37,151 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-10 17:49:24,965 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-10 17:49:24,965 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-10 17:49:24,965 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-10 17:49:24,965 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-10 17:49:24,969 - ImageExtractor - INFO - Processing target 1/1
+2025-03-10 17:49:25,475 - ImageExtractor - INFO - Found 27 image elements with XPath '//img'
+2025-03-10 17:49:25,476 - ImageExtractor - INFO - Found 27 images from https://ko.m.wikipedia.org/wiki/%EC%9C%A4%EC%84%9D%EC%97%B4
+2025-03-10 17:49:25,533 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-10 17:49:25,846 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/256px-South_Korea_President_Yoon_Suk_Yeol_portrait.jpg
+2025-03-10 17:49:25,890 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/128px-Yoon_Suk-yeol_Signature.svg.png
+2025-03-10 17:49:25,962 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%282%29.jpg
+2025-03-10 17:49:26,042 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%284%29.jpg
+2025-03-10 17:49:26,320 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%285%29.jpg
+2025-03-10 17:49:26,389 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/325px-Flower_wreaths_to_express_support_for_Prosecutor_General_Yoon_Seok-youl_stand_in_a_row_surrounding_the_Supreme_Public_Prosecutors%E2%80%99_Office_%281%29.jpg
+2025-03-10 17:49:26,452 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-10 17:49:26,519 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/292px-Yoon_Seok-yeol_supporters_calling_for_unification_of_opposition_candidates.jpg
+2025-03-10 17:49:26,588 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/475px-A_large_number_of_supporters_of_former_Prosecutor_General_Yoon_Seok-yeol_and_reporters_%286%29.jpg
+2025-03-10 17:49:26,657 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/292px-A_placard_from_the_Yoon_Seok-yeol_fan_club_and_a_number_of_wreaths_supporting_Yoon_are_placed_on_the_street.jpg
+2025-03-10 17:49:26,844 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/292px-thumbnail.jpg
+2025-03-10 17:49:26,844 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-thumbnail.jpg
+2025-03-10 17:49:26,896 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/250px-People_Power_Party_presidential_contender_Yoon_Seok-youl_during_his_visit_to_the_party%27s_chapter_in_Seoul%27s_Eunpyeong_District_on_Aug._3%2C_2021.jpg
+2025-03-10 17:49:26,897 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-10 17:49:26,967 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/250px-KOREA_The_20th_President_Inauguration_Ceremony_571_%2852062297122%29.jpg
+2025-03-10 17:49:26,967 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-10 17:49:27,013 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/25px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-10 17:49:27,068 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/12px-Commons-logo.svg.png
+2025-03-10 17:49:27,120 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/12px-Wikisource-logo.svg.png
+2025-03-10 17:49:27,184 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/13px-Wikiquote-logo.svg.png
+2025-03-10 17:49:27,229 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/60px-Flag_of_South_Korea.svg.png
+2025-03-10 17:49:27,274 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/60px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-10 17:49:27,592 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/start
+2025-03-10 17:49:27,592 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-10 17:49:27,631 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/wikimedia.svg
+2025-03-10 17:49:27,671 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/mediawiki_compact.svg
+2025-03-10 17:49:27,672 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-10 17:49:27,672 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 22:29:55,518 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 22:29:55,518 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 22:29:55,518 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 22:29:55,518 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 22:29:55,519 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 22:29:55,715 - ImageExtractor - INFO - Found 27 image elements with XPath '//img'
+2025-03-16 22:29:55,716 - ImageExtractor - INFO - Found 27 images from https://ko.m.wikipedia.org/wiki/%EC%9C%A4%EC%84%9D%EC%97%B4
+2025-03-16 22:29:55,718 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:29:55,718 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/256px-South_Korea_President_Yoon_Suk_Yeol_portrait.jpg
+2025-03-16 22:29:55,718 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/128px-Yoon_Suk-yeol_Signature.svg.png
+2025-03-16 22:29:55,718 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%282%29.jpg
+2025-03-16 22:29:55,718 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%284%29.jpg
+2025-03-16 22:29:55,718 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%285%29.jpg
+2025-03-16 22:29:55,719 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Flower_wreaths_to_express_support_for_Prosecutor_General_Yoon_Seok-youl_stand_in_a_row_surrounding_the_Supreme_Public_Prosecutors%E2%80%99_Office_%281%29.jpg
+2025-03-16 22:29:55,719 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:29:55,719 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-Yoon_Seok-yeol_supporters_calling_for_unification_of_opposition_candidates.jpg
+2025-03-16 22:29:55,719 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/475px-A_large_number_of_supporters_of_former_Prosecutor_General_Yoon_Seok-yeol_and_reporters_%286%29.jpg
+2025-03-16 22:29:55,719 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-A_placard_from_the_Yoon_Seok-yeol_fan_club_and_a_number_of_wreaths_supporting_Yoon_are_placed_on_the_street.jpg
+2025-03-16 22:29:55,917 - ImageExtractor - INFO - Saved image: data/raw/amazon/images1/330px-thumbnail.jpg
+2025-03-16 22:29:55,917 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-thumbnail.jpg
+2025-03-16 22:29:55,917 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-People_Power_Party_presidential_contender_Yoon_Seok-youl_during_his_visit_to_the_party%27s_chapter_in_Seoul%27s_Eunpyeong_District_on_Aug._3%2C_2021.jpg
+2025-03-16 22:29:55,917 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:29:55,917 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-KOREA_The_20th_President_Inauguration_Ceremony_571_%2852062297122%29.jpg
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/25px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Commons-logo.svg.png
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Wikisource-logo.svg.png
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/13px-Wikiquote-logo.svg.png
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_South_Korea.svg.png
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/start
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikimedia.svg
+2025-03-16 22:29:55,918 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/mediawiki_compact.svg
+2025-03-16 22:29:55,919 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 22:29:55,919 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 22:29:55,919 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 22:29:55,919 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 22:29:55,919 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 22:29:55,919 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 22:29:55,920 - TextExtractor - INFO - Processing target 1/1
+2025-03-16 22:29:56,164 - TextExtractor - INFO - Found 35 text elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 22:29:56,166 - TextExtractor - INFO - Found 35 text items from https://www.scmp.com/news/china
+2025-03-16 22:29:56,168 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 22:29:56,168 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 22:44:25,842 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 22:44:25,842 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 22:44:25,843 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 22:44:25,843 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 22:44:25,843 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 22:44:26,062 - ImageExtractor - INFO - Found 27 image elements with XPath '//img'
+2025-03-16 22:44:26,064 - ImageExtractor - INFO - Found 27 images from https://ko.m.wikipedia.org/wiki/%EC%9C%A4%EC%84%9D%EC%97%B4
+2025-03-16 22:44:26,064 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:44:26,064 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/256px-South_Korea_President_Yoon_Suk_Yeol_portrait.jpg
+2025-03-16 22:44:26,065 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/128px-Yoon_Suk-yeol_Signature.svg.png
+2025-03-16 22:44:26,065 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%282%29.jpg
+2025-03-16 22:44:26,065 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%284%29.jpg
+2025-03-16 22:44:26,065 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%285%29.jpg
+2025-03-16 22:44:26,065 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Flower_wreaths_to_express_support_for_Prosecutor_General_Yoon_Seok-youl_stand_in_a_row_surrounding_the_Supreme_Public_Prosecutors%E2%80%99_Office_%281%29.jpg
+2025-03-16 22:44:26,065 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:44:26,065 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-Yoon_Seok-yeol_supporters_calling_for_unification_of_opposition_candidates.jpg
+2025-03-16 22:44:26,065 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/475px-A_large_number_of_supporters_of_former_Prosecutor_General_Yoon_Seok-yeol_and_reporters_%286%29.jpg
+2025-03-16 22:44:26,065 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-A_placard_from_the_Yoon_Seok-yeol_fan_club_and_a_number_of_wreaths_supporting_Yoon_are_placed_on_the_street.jpg
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/330px-thumbnail.jpg
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-thumbnail.jpg
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-People_Power_Party_presidential_contender_Yoon_Seok-youl_during_his_visit_to_the_party%27s_chapter_in_Seoul%27s_Eunpyeong_District_on_Aug._3%2C_2021.jpg
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-KOREA_The_20th_President_Inauguration_Ceremony_571_%2852062297122%29.jpg
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/25px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Commons-logo.svg.png
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Wikisource-logo.svg.png
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/13px-Wikiquote-logo.svg.png
+2025-03-16 22:44:26,066 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_South_Korea.svg.png
+2025-03-16 22:44:26,067 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:44:26,067 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/start
+2025-03-16 22:44:26,067 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:44:26,067 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikimedia.svg
+2025-03-16 22:44:26,067 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/mediawiki_compact.svg
+2025-03-16 22:44:26,068 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 22:44:26,068 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 22:44:26,068 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 22:44:26,069 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 22:44:26,069 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 22:44:26,069 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 22:44:26,069 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 22:44:26,069 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 22:44:40,724 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 22:44:40,724 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 22:44:40,724 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 22:44:40,724 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 22:44:40,725 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 22:44:40,938 - ImageExtractor - INFO - Found 27 image elements with XPath '//img'
+2025-03-16 22:44:40,940 - ImageExtractor - INFO - Found 27 images from https://ko.m.wikipedia.org/wiki/%EC%9C%A4%EC%84%9D%EC%97%B4
+2025-03-16 22:44:40,940 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:44:40,940 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/256px-South_Korea_President_Yoon_Suk_Yeol_portrait.jpg
+2025-03-16 22:44:40,940 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/128px-Yoon_Suk-yeol_Signature.svg.png
+2025-03-16 22:44:40,940 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%282%29.jpg
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%284%29.jpg
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%285%29.jpg
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Flower_wreaths_to_express_support_for_Prosecutor_General_Yoon_Seok-youl_stand_in_a_row_surrounding_the_Supreme_Public_Prosecutors%E2%80%99_Office_%281%29.jpg
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-Yoon_Seok-yeol_supporters_calling_for_unification_of_opposition_candidates.jpg
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/475px-A_large_number_of_supporters_of_former_Prosecutor_General_Yoon_Seok-yeol_and_reporters_%286%29.jpg
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-A_placard_from_the_Yoon_Seok-yeol_fan_club_and_a_number_of_wreaths_supporting_Yoon_are_placed_on_the_street.jpg
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/330px-thumbnail.jpg
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-thumbnail.jpg
+2025-03-16 22:44:40,941 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-People_Power_Party_presidential_contender_Yoon_Seok-youl_during_his_visit_to_the_party%27s_chapter_in_Seoul%27s_Eunpyeong_District_on_Aug._3%2C_2021.jpg
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-KOREA_The_20th_President_Inauguration_Ceremony_571_%2852062297122%29.jpg
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/25px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Commons-logo.svg.png
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Wikisource-logo.svg.png
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/13px-Wikiquote-logo.svg.png
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_South_Korea.svg.png
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/start
+2025-03-16 22:44:40,942 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:44:40,943 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikimedia.svg
+2025-03-16 22:44:40,943 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/mediawiki_compact.svg
+2025-03-16 22:44:40,943 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 22:44:40,943 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 22:44:40,943 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 22:44:40,944 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 22:44:40,944 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 22:44:40,944 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 22:44:40,944 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 22:44:40,944 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 22:45:19,618 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 22:45:19,618 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 22:45:19,618 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 22:45:19,618 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 22:45:19,618 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 22:45:21,358 - ImageExtractor - INFO - Found 27 image elements with XPath '//img'
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Found 27 images from https://ko.m.wikipedia.org/wiki/%EC%9C%A4%EC%84%9D%EC%97%B4
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/256px-South_Korea_President_Yoon_Suk_Yeol_portrait.jpg
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/128px-Yoon_Suk-yeol_Signature.svg.png
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%282%29.jpg
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%284%29.jpg
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%285%29.jpg
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Flower_wreaths_to_express_support_for_Prosecutor_General_Yoon_Seok-youl_stand_in_a_row_surrounding_the_Supreme_Public_Prosecutors%E2%80%99_Office_%281%29.jpg
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:45:21,360 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-Yoon_Seok-yeol_supporters_calling_for_unification_of_opposition_candidates.jpg
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/475px-A_large_number_of_supporters_of_former_Prosecutor_General_Yoon_Seok-yeol_and_reporters_%286%29.jpg
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-A_placard_from_the_Yoon_Seok-yeol_fan_club_and_a_number_of_wreaths_supporting_Yoon_are_placed_on_the_street.jpg
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/330px-thumbnail.jpg
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-thumbnail.jpg
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-People_Power_Party_presidential_contender_Yoon_Seok-youl_during_his_visit_to_the_party%27s_chapter_in_Seoul%27s_Eunpyeong_District_on_Aug._3%2C_2021.jpg
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-KOREA_The_20th_President_Inauguration_Ceremony_571_%2852062297122%29.jpg
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/25px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Commons-logo.svg.png
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Wikisource-logo.svg.png
+2025-03-16 22:45:21,361 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/13px-Wikiquote-logo.svg.png
+2025-03-16 22:45:21,362 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_South_Korea.svg.png
+2025-03-16 22:45:21,362 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:45:21,362 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/start
+2025-03-16 22:45:21,362 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:45:21,362 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikimedia.svg
+2025-03-16 22:45:21,362 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/mediawiki_compact.svg
+2025-03-16 22:45:21,362 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 22:45:21,362 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 22:45:21,363 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 22:45:21,363 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 22:45:21,363 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 22:45:21,363 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 22:45:21,364 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 22:45:21,364 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 22:45:33,379 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 22:45:33,379 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 22:45:33,379 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 22:45:33,379 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 22:45:33,380 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 22:45:33,568 - ImageExtractor - INFO - Found 27 image elements with XPath '//img'
+2025-03-16 22:45:33,570 - ImageExtractor - INFO - Found 27 images from https://ko.m.wikipedia.org/wiki/%EC%9C%A4%EC%84%9D%EC%97%B4
+2025-03-16 22:45:33,570 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:45:33,570 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/256px-South_Korea_President_Yoon_Suk_Yeol_portrait.jpg
+2025-03-16 22:45:33,570 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/128px-Yoon_Suk-yeol_Signature.svg.png
+2025-03-16 22:45:33,570 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%282%29.jpg
+2025-03-16 22:45:33,570 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%284%29.jpg
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Demonstrator_both_supporting_Prosecutor_General_Yoon_Seok-youl_%285%29.jpg
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/325px-Flower_wreaths_to_express_support_for_Prosecutor_General_Yoon_Seok-youl_stand_in_a_row_surrounding_the_Supreme_Public_Prosecutors%E2%80%99_Office_%281%29.jpg
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-Yoon_Seok-yeol_supporters_calling_for_unification_of_opposition_candidates.jpg
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/475px-A_large_number_of_supporters_of_former_Prosecutor_General_Yoon_Seok-yeol_and_reporters_%286%29.jpg
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-A_placard_from_the_Yoon_Seok-yeol_fan_club_and_a_number_of_wreaths_supporting_Yoon_are_placed_on_the_street.jpg
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/330px-thumbnail.jpg
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/292px-thumbnail.jpg
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-People_Power_Party_presidential_contender_Yoon_Seok-youl_during_his_visit_to_the_party%27s_chapter_in_Seoul%27s_Eunpyeong_District_on_Aug._3%2C_2021.jpg
+2025-03-16 22:45:33,571 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/250px-KOREA_The_20th_President_Inauguration_Ceremony_571_%2852062297122%29.jpg
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/18px-Icons8_flat_search.svg.png
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/25px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Commons-logo.svg.png
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/12px-Wikisource-logo.svg.png
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/13px-Wikiquote-logo.svg.png
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_South_Korea.svg.png
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/60px-Flag_of_the_President_of_South_Korea.svg.png
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/start
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikipedia-wordmark-ko.svg
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/wikimedia.svg
+2025-03-16 22:45:33,572 - ImageExtractor - INFO - Image already exists: data/raw/amazon/images1/mediawiki_compact.svg
+2025-03-16 22:45:33,573 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 22:45:33,573 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 22:45:33,573 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 22:45:33,574 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 22:45:33,574 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 22:45:33,574 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 22:45:33,574 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 22:45:33,574 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:04:03,040 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:04:03,040 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:04:03,040 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:04:03,040 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:04:03,047 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:04:03,047 - ImageExtractor - ERROR - Error processing target https://www.scmp.com/: ImageExtractor.extract() takes 2 positional arguments but 3 were given
+2025-03-16 23:04:03,047 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:04:03,047 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:04:27,771 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:04:27,772 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:04:27,772 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:04:27,772 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:04:27,776 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:04:27,918 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:04:27,918 - ImageExtractor - ERROR - Error processing target https://www.scmp.com/: list indices must be integers or slices, not str
+2025-03-16 23:04:27,920 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:04:27,920 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:05:00,981 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:05:00,981 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:05:00,981 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:05:00,981 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:05:00,988 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:05:01,133 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:05:01,133 - ImageExtractor - ERROR - Error processing target https://www.scmp.com/: list indices must be integers or slices, not str
+2025-03-16 23:05:01,133 - src.utils.logging - ERROR - Error with source scmp_images: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "/Users/dhchoi/Github/dhg503-project/scripts/crawl.py", line 87, in main
+    crawler.crawl()
+  File "/Users/dhchoi/Github/dhg503-project/src/crawler/spiders/ElementExtractor.py", line 44, in crawl
+    item["source_url"] = input_url
+    ~~~~^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2025-03-16 23:05:01,135 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:06:36,726 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:06:36,726 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:06:36,726 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:06:36,726 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:06:36,732 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:06:36,862 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:06:36,864 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:06:36,864 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:07:02,649 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:07:02,649 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:07:02,649 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:07:02,649 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:07:02,656 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:07:02,786 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:07:02,789 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:07:02,789 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:08:05,014 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:08:05,014 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:08:05,014 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:08:05,014 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:08:05,021 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:08:05,134 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:08:05,136 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:08:05,136 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:08:16,805 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:08:16,805 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:08:16,805 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:08:16,805 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:08:16,809 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:08:16,929 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:08:16,931 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:08:16,931 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:08:31,740 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:08:31,740 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:08:31,740 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:08:31,740 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:08:31,745 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:08:31,884 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:08:31,886 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:08:31,886 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:08:52,527 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:08:52,527 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:08:52,527 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:08:52,528 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:08:52,532 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:08:52,658 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:08:52,660 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:08:52,660 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:09:08,298 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:09:08,298 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:09:08,298 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:09:08,298 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:09:08,304 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:09:08,418 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:09:08,421 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:09:08,421 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:09:20,874 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:09:20,874 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:09:20,874 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:09:20,874 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:09:20,878 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:09:20,990 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:09:20,992 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:09:20,992 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:09:56,504 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:09:56,504 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:09:56,504 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:09:56,504 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:09:56,508 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:09:56,656 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:09:56,657 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:09:56,658 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:10:15,598 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:10:15,598 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:10:15,598 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:10:15,598 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:10:15,603 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:10:15,719 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:10:15,721 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:10:15,721 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:10:47,857 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:10:47,857 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:10:47,857 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:10:47,857 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:10:47,861 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:10:48,213 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:10:48,216 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:10:48,216 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:11:00,282 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:11:00,282 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:11:00,282 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:11:00,282 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:11:00,287 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:11:00,437 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:11:00,439 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:11:00,439 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:11:14,064 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:11:14,064 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:11:14,064 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:11:14,064 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:11:14,068 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:11:14,177 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:11:14,179 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:11:14,179 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:12:04,196 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:12:04,196 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:12:04,197 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:12:04,197 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:12:04,201 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:12:04,361 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:12:04,363 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:12:04,363 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:14:25,535 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:14:25,535 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:14:25,535 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:14:25,535 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:14:25,542 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:14:25,681 - ImageExtractor - ERROR - Error processing target https://www.scmp.com/: name 'html' is not defined
+2025-03-16 23:14:25,682 - src.utils.logging - ERROR - Error with source scmp_images: name 'html' is not defined
+Traceback (most recent call last):
+  File "/Users/dhchoi/Github/dhg503-project/scripts/crawl.py", line 87, in main
+    crawler.crawl()
+  File "/Users/dhchoi/Github/dhg503-project/src/crawler/spiders/ElementExtractor.py", line 38, in crawl
+    page = html.fromstring(html_content)
+           ^^^^
+NameError: name 'html' is not defined
+2025-03-16 23:14:25,682 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:14:37,797 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:14:37,797 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:14:37,797 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:14:37,797 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:14:37,801 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:14:37,910 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:14:38,069 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:14:38,167 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:14:38,260 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:14:38,426 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:14:38,509 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/04b29a8c-e1d0-4ccf-bf6e-897187bd9cb6_c3ef12fd.jpg
+2025-03-16 23:14:38,606 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:14:38,754 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/229c2e13-6001-4b56-8cb7-0880abde1393_cfe4d8ce.jpg
+2025-03-16 23:14:38,912 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/47a3cf0b-2dbb-480e-bc38-0d53fc3ee2ab_2e945785.jpg
+2025-03-16 23:14:39,191 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/3556fa06-c4dc-4c09-9c31-313518bf6cb9_093427d9.jpg
+2025-03-16 23:14:39,246 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:14:39,269 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:14:39,295 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:14:39,317 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:14:39,347 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:14:39,411 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:14:39,481 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:14:39,578 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:14:39,731 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:14:39,752 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:14:39,833 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:14:39,833 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:14:39,996 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:14:40,252 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:14:40,254 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:14:40,254 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:17:44,696 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:17:44,696 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:17:44,696 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:17:44,696 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:17:44,702 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/04b29a8c-e1d0-4ccf-bf6e-897187bd9cb6_c3ef12fd.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/229c2e13-6001-4b56-8cb7-0880abde1393_cfe4d8ce.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/47a3cf0b-2dbb-480e-bc38-0d53fc3ee2ab_2e945785.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/3556fa06-c4dc-4c09-9c31-313518bf6cb9_093427d9.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:17:44,830 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:17:44,831 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:17:44,831 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:17:44,831 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:17:44,831 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:17:44,831 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:17:44,831 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:17:44,833 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:17:44,833 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:20:46,487 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:20:46,487 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:20:46,487 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:20:46,487 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:20:46,494 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:20:46,635 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:20:46,635 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:20:46,635 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:20:46,635 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:20:46,746 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/2bf1a1aa-3e88-464b-ab4b-d3e99eb934b1_1ae46ec3.jpg
+2025-03-16 23:20:46,942 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/47a3cf0b-2dbb-480e-bc38-0d53fc3ee2ab_2e945785.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/3556fa06-c4dc-4c09-9c31-313518bf6cb9_093427d9.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:20:47,102 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:20:47,104 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:20:47,104 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:32:57,727 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:32:57,727 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:32:57,727 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:32:57,727 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:32:57,733 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:32:57,884 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:32:57,884 - ImageExtractor - ERROR - Error processing target https://www.scmp.com/: ImageExtractor.extract() got an unexpected keyword argument 'output_dir'
+2025-03-16 23:32:57,884 - src.utils.logging - ERROR - Error with source scmp_images: ImageExtractor.extract() got an unexpected keyword argument 'output_dir'
+Traceback (most recent call last):
+  File "/Users/dhchoi/Github/dhg503-project/scripts/crawl.py", line 87, in main
+    crawler.crawl()
+  File "/Users/dhchoi/Github/dhg503-project/src/crawler/spiders/ElementExtractor.py", line 48, in crawl
+    item = self.extract(element, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ImageExtractor.extract() got an unexpected keyword argument 'output_dir'
+2025-03-16 23:32:57,886 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:34:06,242 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:34:06,242 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:34:06,242 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:34:06,242 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:34:06,248 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:34:06,384 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:34:06,385 - ImageExtractor - ERROR - Error processing target https://www.scmp.com/: ImageExtractor.extract() got an unexpected keyword argument 'output_dir'
+2025-03-16 23:34:06,385 - src.utils.logging - ERROR - Error with source scmp_images: ImageExtractor.extract() got an unexpected keyword argument 'output_dir'
+Traceback (most recent call last):
+  File "/Users/dhchoi/Github/dhg503-project/scripts/crawl.py", line 87, in main
+    crawler.crawl()
+  File "/Users/dhchoi/Github/dhg503-project/src/crawler/spiders/ElementExtractor.py", line 48, in crawl
+    item = self.extract(element, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ImageExtractor.extract() got an unexpected keyword argument 'output_dir'
+2025-03-16 23:34:06,387 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:34:57,668 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:34:57,668 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:34:57,668 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:34:57,668 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:34:57,672 - ImageExtractor - INFO - Processing target 1/1
+2025-03-16 23:34:57,804 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:34:57,804 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:34:57,805 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:34:57,805 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:34:57,805 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:34:57,805 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:34:57,805 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:34:57,805 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/47a3cf0b-2dbb-480e-bc38-0d53fc3ee2ab_2e945785.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:34:57,866 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:34:57,867 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:34:57,869 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:34:57,869 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:39:22,716 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:39:22,716 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:39:22,716 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:39:22,716 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:39:22,720 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:39:22,831 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:39:22,833 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:39:22,833 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:39:22,833 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:39:22,833 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:39:22,833 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:39:22,834 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:39:22,834 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:39:22,969 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:39:22,970 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:39:22,971 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:39:39,918 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:39:39,918 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:39:39,918 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:39:39,918 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:39:39,923 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:39:40,062 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:39:40,064 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:39:40,064 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:39:40,064 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:39:40,064 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:39:40,064 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:39:40,064 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:39:40,064 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:39:40,159 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:39:40,160 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:39:40,160 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:40:01,108 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:40:01,109 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:40:01,109 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:40:01,109 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:40:01,113 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:40:01,238 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:40:01,240 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:40:01,240 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:40:01,240 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:40:01,240 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:40:01,240 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:40:01,240 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:40:01,241 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:40:01,356 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:40:01,358 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:40:01,358 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:40:27,063 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:40:27,063 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:40:27,063 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:40:27,063 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:40:27,067 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:40:27,176 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:40:27,176 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x103616df0>
+2025-03-16 23:40:27,176 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x10441f480>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x1029beb20>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c56670>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c56120>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c56620>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c566c0>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57840>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c577f0>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c578e0>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57930>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57980>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c579d0>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57890>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57a20>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57ac0>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c577a0>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c573e0>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57430>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57660>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57610>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c575c0>
+2025-03-16 23:40:27,177 - ImageExtractor - ERROR - There is no image in the element: <Element img at 0x104c57570>
+2025-03-16 23:40:27,179 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:40:27,179 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:40:27,179 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:40:27,179 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:40:27,179 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:40:27,179 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:40:27,180 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:40:27,308 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:40:27,310 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:40:27,310 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:41:08,412 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:41:08,412 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:41:08,412 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:41:08,412 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:41:08,416 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:41:08,559 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:41:08,561 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:41:08,562 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:41:08,562 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:41:08,562 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:41:08,562 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:41:08,562 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:41:08,562 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:41:08,692 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:41:08,693 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:41:08,693 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:42:18,619 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:42:18,619 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:42:18,619 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:42:18,619 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:42:18,623 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:42:18,751 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:42:18,787 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:42:18,818 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:42:18,846 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/13/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/13/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:42:18,883 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/02/21/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/02/21/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:42:18,918 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:42:18,957 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:42:18,989 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:42:19,021 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:42:19,065 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:42:19,105 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/alex-lo.png?itok=BFXprYPK: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/alex-lo.png?itok=BFXprYPK
+2025-03-16 23:42:19,137 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2022/06/20/Dr. Imran Khalid.jpg?itok=YUrfJGoY&v=1655709776: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2022/06/20/Dr.%20Imran%20Khalid.jpg?itok=YUrfJGoY&v=1655709776
+2025-03-16 23:42:19,169 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2023/05/02/Headshot---AWDA.jpg?itok=CotAL4qd&v=1696988199: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2023/05/02/Headshot---AWDA.jpg?itok=CotAL4qd&v=1696988199
+2025-03-16 23:42:19,197 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2019/06/14/crop2_0.jpg?itok=5S_q5Q9J: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2019/06/14/crop2_0.jpg?itok=5S_q5Q9J
+2025-03-16 23:42:19,227 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/images/author/pic/2019/02/21/scmp_letters.png?itok=FRph0Rew: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/images/author/pic/2019/02/21/scmp_letters.png?itok=FRph0Rew
+2025-03-16 23:42:19,259 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/galleries/2025/03/16/scm_opinion_20250317.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/galleries/2025/03/16/scm_opinion_20250317.jpg
+2025-03-16 23:42:19,292 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/11/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/11/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:42:19,327 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/09/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/09/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:42:19,378 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/01/26/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/01/26/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:42:19,419 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/styles/100x100/public/d8/images/section/2024/10/14/thumbnail_CFT.png?itok=2AMvlvWX: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/styles/100x100/public/d8/images/section/2024/10/14/thumbnail_CFT.png?itok=2AMvlvWX
+2025-03-16 23:42:19,455 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/13/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/13/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:42:19,498 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:42:19,529 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:42:19,568 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/11/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/11/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:42:19,571 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:42:19,571 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:42:19,571 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:42:19,571 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:42:19,571 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:42:19,571 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:42:19,572 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:42:19,697 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:42:19,698 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:42:19,699 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:43:40,932 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:43:40,932 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:43:40,932 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:43:40,932 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:43:40,939 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:43:41,055 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:43:41,207 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:43:41,294 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:43:41,391 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:43:41,476 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/2bf1a1aa-3e88-464b-ab4b-d3e99eb934b1_1ae46ec3.jpg
+2025-03-16 23:43:41,672 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:43:41,831 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:43:41,924 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:43:41,989 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:43:42,017 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:43:42,064 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:43:42,091 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:43:42,117 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:43:42,141 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:43:42,163 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:43:42,210 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:43:42,277 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:43:42,368 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:43:42,517 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:43:42,537 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:43:42,611 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:43:42,611 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:43:42,767 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:43:43,026 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:43:43,028 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:43:43,028 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:43:43,028 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:43:43,029 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:43:43,029 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:43:43,029 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:43:43,029 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:43:43,123 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:43:43,124 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:43:43,124 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:44:07,292 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:44:07,292 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:44:07,292 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:44:07,292 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:44:07,296 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:44:07,410 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:44:07,410 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:44:07,410 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:44:07,410 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:44:07,601 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:44:07,601 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:44:07,601 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:44:07,601 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:44:07,601 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:44:07,601 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:44:07,601 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:44:07,601 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:44:07,602 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:44:07,604 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:44:07,604 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:44:07,604 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:44:07,604 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:44:07,604 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:44:07,604 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:44:07,605 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:44:07,724 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:44:07,725 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:44:07,726 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:44:12,855 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:44:12,855 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:44:12,855 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:44:12,855 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:44:12,859 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:44:12,998 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:44:12,999 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:44:12,999 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:44:12,999 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:44:12,999 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:44:12,999 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:44:12,999 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:44:13,001 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:44:13,001 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:44:13,001 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:44:13,001 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:44:13,001 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:44:13,001 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:44:13,001 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:44:13,131 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:44:13,132 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:44:13,132 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:44:24,078 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:44:24,078 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:44:24,078 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:44:24,078 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:44:24,082 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:44:24,216 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:44:24,243 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:44:24,278 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:44:24,309 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/13/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/13/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:44:24,340 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/02/21/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/02/21/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:44:24,378 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:44:24,410 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:44:24,449 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:44:24,477 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/16/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:44:24,508 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:44:24,552 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/alex-lo.png?itok=BFXprYPK: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/alex-lo.png?itok=BFXprYPK
+2025-03-16 23:44:24,589 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2022/06/20/Dr. Imran Khalid.jpg?itok=YUrfJGoY&v=1655709776: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2022/06/20/Dr.%20Imran%20Khalid.jpg?itok=YUrfJGoY&v=1655709776
+2025-03-16 23:44:24,625 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2023/05/02/Headshot---AWDA.jpg?itok=CotAL4qd&v=1696988199: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2023/05/02/Headshot---AWDA.jpg?itok=CotAL4qd&v=1696988199
+2025-03-16 23:44:24,661 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2019/06/14/crop2_0.jpg?itok=5S_q5Q9J: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/d8/images/author/pic/2019/06/14/crop2_0.jpg?itok=5S_q5Q9J
+2025-03-16 23:44:24,700 - ImageExtractor - ERROR - Error saving image https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/images/author/pic/2019/02/21/scmp_letters.png?itok=FRph0Rew: 403 Client Error: Forbidden for url: https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=40,format=auto/sites/default/files/styles/300x300/public/images/author/pic/2019/02/21/scmp_letters.png?itok=FRph0Rew
+2025-03-16 23:44:24,730 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/galleries/2025/03/16/scm_opinion_20250317.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/galleries/2025/03/16/scm_opinion_20250317.jpg
+2025-03-16 23:44:24,766 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/11/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/11/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:44:24,798 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/09/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/09/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:44:24,833 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/01/26/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/01/26/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:44:24,866 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/styles/100x100/public/d8/images/section/2024/10/14/thumbnail_CFT.png?itok=2AMvlvWX: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/styles/100x100/public/d8/images/section/2024/10/14/thumbnail_CFT.png?itok=2AMvlvWX
+2025-03-16 23:44:24,895 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/13/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/13/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:44:24,930 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:44:24,964 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/14/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:44:25,001 - ImageExtractor - ERROR - Error saving image https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/11/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg: 403 Client Error: Forbidden for url: https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2025/03/11/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:44:25,004 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:44:25,004 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:44:25,004 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:44:25,004 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:44:25,005 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:44:25,005 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:44:25,005 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:44:25,134 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:44:25,136 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:44:25,136 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:44:39,756 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:44:39,756 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:44:39,756 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:44:39,756 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:44:39,761 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:44:39,868 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:44:40,035 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:44:40,118 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:44:40,207 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:44:40,370 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:44:40,561 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:44:40,720 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:44:40,816 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:44:40,873 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:44:40,900 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:44:40,944 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:44:40,964 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:44:40,987 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:44:41,015 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:44:41,039 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:44:41,086 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:44:41,148 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:44:41,240 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:44:41,386 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:44:41,409 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:44:41,483 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:44:41,483 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:44:41,642 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:44:41,891 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:44:41,893 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:44:41,893 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:44:41,893 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:44:41,893 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:44:41,893 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:44:41,893 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:44:41,894 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:44:42,009 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:44:42,011 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:44:42,011 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:45:34,378 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:45:34,378 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:45:34,378 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:45:34,378 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:45:34,383 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:45:34,524 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:45:34,525 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:45:34,525 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:45:34,525 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:45:34,707 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/2bf1a1aa-3e88-464b-ab4b-d3e99eb934b1_1ae46ec3.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:45:34,708 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:45:34,709 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:45:34,709 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:45:34,709 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:45:34,709 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:45:34,712 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:45:34,712 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:45:34,712 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:45:34,712 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:45:34,712 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:45:34,712 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:45:34,713 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:45:34,826 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:45:34,828 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:45:34,828 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:45:50,104 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:45:50,104 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:45:50,104 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:45:50,104 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:45:50,108 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:45:50,216 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:45:50,364 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:45:50,446 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:45:50,533 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:45:50,617 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/2bf1a1aa-3e88-464b-ab4b-d3e99eb934b1_1ae46ec3.jpg
+2025-03-16 23:45:50,807 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:45:50,961 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:45:51,049 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:45:51,108 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:45:51,131 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:45:51,172 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:45:51,203 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:45:51,237 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:45:51,274 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:45:51,301 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:45:51,345 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:45:51,406 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:45:51,496 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:45:51,642 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:45:51,661 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:45:51,735 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:45:51,735 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:45:51,890 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:45:52,136 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:45:52,139 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:45:52,139 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:45:52,139 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:45:52,139 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:45:52,139 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:45:52,139 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:45:52,139 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:45:52,228 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:45:52,230 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:45:52,230 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:49:37,740 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:49:37,740 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:49:37,740 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:49:37,740 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:49:37,747 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:49:37,989 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:49:37,990 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:49:37,990 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:49:37,990 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:49:38,166 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:49:38,167 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:49:38,169 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:49:38,169 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:49:38,169 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:49:38,169 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:49:38,169 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:49:38,169 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:49:38,170 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:49:38,265 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:49:38,266 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:49:38,266 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-16 23:50:13,826 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-16 23:50:13,826 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-16 23:50:13,826 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-16 23:50:13,826 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-16 23:50:13,827 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5594067b-05b1-499c-acd4-c18a4a27989d_7ca7b892.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e6cbb8f8-99bd-4f38-884a-cfbc6e60d6c3_e2a95e8f.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e10adf99-1c8b-4607-8ed9-05abbf358d06_b6b62217.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-16 23:50:13,953 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-16 23:50:13,954 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-16 23:50:13,956 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-16 23:50:13,956 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-16 23:50:13,956 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-16 23:50:13,956 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-16 23:50:13,956 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-16 23:50:13,956 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-16 23:50:13,956 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-16 23:50:14,051 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-16 23:50:14,052 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-16 23:50:14,053 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-17 01:13:15,921 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-17 01:13:15,922 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-17 01:13:15,922 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-17 01:13:15,922 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-17 01:13:15,922 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-17 01:13:16,034 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-17 01:13:16,193 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-17 01:13:16,273 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-17 01:13:16,363 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-17 01:13:16,529 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ca81a296-be66-483f-a128-882fb9dae8b1_66e87897.jpg
+2025-03-17 01:13:16,682 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/35bb2c69-26a9-41fa-9895-bfc9afce4354_6d9b426a.jpg
+2025-03-17 01:13:16,725 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/bf05a615-46a7-49c8-b3aa-6128bb4fee7e_ab55fb98.jpg
+2025-03-17 01:13:16,894 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-17 01:13:16,942 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e8ab328c-dd7d-48ad-a939-a4d172eea554_3efe6612.jpg
+2025-03-17 01:13:17,004 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-17 01:13:17,053 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/alex-lo.png
+2025-03-17 01:13:17,084 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-17 01:13:17,111 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-17 01:13:17,141 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/crop2_0.jpg
+2025-03-17 01:13:17,172 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scmp_letters.png
+2025-03-17 01:13:17,219 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-17 01:13:17,282 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-17 01:13:17,376 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-17 01:13:17,522 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-17 01:13:17,542 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-17 01:13:17,617 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-17 01:13:17,617 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-17 01:13:17,777 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-17 01:13:18,029 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-17 01:13:18,032 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-17 01:13:18,032 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-17 01:13:18,033 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-17 01:13:18,033 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-17 01:13:18,033 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-17 01:13:18,033 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-17 01:13:18,034 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-17 01:13:18,079 - TextExtractor - INFO - Found 0 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-17 01:13:18,080 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-17 01:13:18,080 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-17 01:15:03,915 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-17 01:15:03,915 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-17 01:15:03,916 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-17 01:15:03,916 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-17 01:15:03,916 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-17 01:15:04,053 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-17 01:15:04,054 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-17 01:15:04,054 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-17 01:15:04,054 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-17 01:15:04,158 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/2bf1a1aa-3e88-464b-ab4b-d3e99eb934b1_1ae46ec3.jpg
+2025-03-17 01:15:04,158 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/35bb2c69-26a9-41fa-9895-bfc9afce4354_6d9b426a.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/bf05a615-46a7-49c8-b3aa-6128bb4fee7e_ab55fb98.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e8ab328c-dd7d-48ad-a939-a4d172eea554_3efe6612.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-17 01:15:04,159 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-17 01:15:04,160 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-17 01:15:04,160 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-17 01:15:04,160 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-17 01:15:04,160 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-17 01:15:04,160 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-17 01:15:04,162 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-17 01:15:04,162 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-17 01:15:04,163 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-17 01:15:04,163 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-17 01:15:04,163 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-17 01:15:04,163 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-17 01:15:04,164 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-17 01:15:04,203 - TextExtractor - INFO - Found 0 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-17 01:15:04,204 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-17 01:15:04,204 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-17 01:15:51,654 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-17 01:15:51,654 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-17 01:15:51,654 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-17 01:15:51,654 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-17 01:15:51,655 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-17 01:15:51,769 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-17 01:15:51,769 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-17 01:15:51,769 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/2bf1a1aa-3e88-464b-ab4b-d3e99eb934b1_1ae46ec3.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/35bb2c69-26a9-41fa-9895-bfc9afce4354_6d9b426a.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/bf05a615-46a7-49c8-b3aa-6128bb4fee7e_ab55fb98.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/e8ab328c-dd7d-48ad-a939-a4d172eea554_3efe6612.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/alex-lo.png
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/crop2_0.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scmp_letters.png
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-17 01:15:51,770 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-17 01:15:51,771 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-17 01:15:51,771 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-17 01:15:51,771 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-17 01:15:51,771 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-17 01:15:51,771 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-17 01:15:51,771 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-17 01:15:51,773 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-17 01:15:51,773 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-17 01:15:51,773 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-17 01:15:51,773 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-17 01:15:51,773 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-17 01:15:51,773 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-17 01:15:51,774 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-17 01:15:51,881 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-17 01:15:51,883 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-17 01:15:51,883 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
+2025-03-17 01:16:28,076 - src.utils.logging - INFO - Starting crawler.image_extractor script
+2025-03-17 01:16:28,077 - src.utils.logging - INFO - Starting image_extractor script
+2025-03-17 01:16:28,077 - src.utils.logging - INFO - Running crawler: image_extractor
+2025-03-17 01:16:28,077 - src.utils.logging - INFO - Running image_extractor on scmp_images
+2025-03-17 01:16:28,077 - ImageExtractor - INFO - Processing url https://www.scmp.com/
+2025-03-17 01:16:28,203 - ImageExtractor - INFO - Found 23 elements with XPath '//img'
+2025-03-17 01:16:28,349 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c245f5f3-aacc-4b73-9994-58368f72b62b_ad5c258b.jpg
+2025-03-17 01:16:28,428 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-17 01:16:28,515 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6a3c17e0-9d41-4dc8-8e3c-bdc91e95a203_aed0d996.jpg
+2025-03-17 01:16:28,596 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/2bf1a1aa-3e88-464b-ab4b-d3e99eb934b1_1ae46ec3.jpg
+2025-03-17 01:16:28,747 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/35bb2c69-26a9-41fa-9895-bfc9afce4354_6d9b426a.jpg
+2025-03-17 01:16:28,787 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/bf05a615-46a7-49c8-b3aa-6128bb4fee7e_ab55fb98.jpg
+2025-03-17 01:16:28,945 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/6deb091a-4d8b-414d-a819-b53d27aad466_bda85486.jpg
+2025-03-17 01:16:28,995 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/e8ab328c-dd7d-48ad-a939-a4d172eea554_3efe6612.jpg
+2025-03-17 01:16:29,052 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/5ce8a5a8-f755-4d9c-b1a3-4e299b1fdddd_5e603306.jpg
+2025-03-17 01:16:29,107 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/alex-lo.png
+2025-03-17 01:16:29,136 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Dr. Imran Khalid.jpg
+2025-03-17 01:16:29,160 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/Headshot---AWDA.jpg
+2025-03-17 01:16:29,183 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/crop2_0.jpg
+2025-03-17 01:16:29,209 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scmp_letters.png
+2025-03-17 01:16:29,253 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/scm_opinion_20250317.jpg
+2025-03-17 01:16:29,315 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/b99d5a78-87f8-4248-9bb1-5618ff6c3b30_575de8e4.jpg
+2025-03-17 01:16:29,403 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/c0b62adf-79b6-4726-9749-b7b7df5e89cb_6c2fbc0e.jpg
+2025-03-17 01:16:29,548 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/850d9b3e-4397-4c5d-a51b-7fe27fcbbd31_973b9497.jpg
+2025-03-17 01:16:29,566 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/thumbnail_CFT.png
+2025-03-17 01:16:29,641 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/14e96fd4-231e-473e-9709-7ff30436ae1d_028f0122.jpg
+2025-03-17 01:16:29,641 - ImageExtractor - INFO - Image already exists: data/raw/scmp/images/0eb09f0a-f505-419e-8327-33c32a562dd7_6a1d92cf.jpg
+2025-03-17 01:16:29,801 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab33f0cf-a35c-42b4-bc8e-59a62fc4cbc5_d34bdc1d.jpg
+2025-03-17 01:16:30,050 - ImageExtractor - INFO - Saved image: data/raw/scmp/images/ab08a7cd-a224-4f44-a378-91eb6827e44f_ddd66a3d.jpg
+2025-03-17 01:16:30,053 - src.utils.logging - INFO - Completed crawling for source: scmp_images
+2025-03-17 01:16:30,053 - src.utils.logging - INFO - Completed crawling for crawler: image_extractor
+2025-03-17 01:16:30,053 - src.utils.logging - INFO - Starting crawler.text_extractor script
+2025-03-17 01:16:30,054 - src.utils.logging - INFO - Starting text_extractor script
+2025-03-17 01:16:30,054 - src.utils.logging - INFO - Running crawler: text_extractor
+2025-03-17 01:16:30,054 - src.utils.logging - INFO - Running text_extractor on scmp_headlines
+2025-03-17 01:16:30,055 - TextExtractor - INFO - Processing url https://www.scmp.com/news/china
+2025-03-17 01:16:30,142 - TextExtractor - INFO - Found 35 elements with XPath '//div[@data-qa='Component-Headline']//h2'
+2025-03-17 01:16:30,143 - src.utils.logging - INFO - Completed crawling for source: scmp_headlines
+2025-03-17 01:16:30,143 - src.utils.logging - INFO - Completed crawling for crawler: text_extractor
