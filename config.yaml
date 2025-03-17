@@ -7,6 +7,8 @@ crawler:
         targets:
           - xpath: "//a[contains(., 'China')]"
             url: "https://www.scmp.com/"
+          - xpath: "//a[contains(., 'China')]"
+            url: "https://www.scmp.com/"
 
   html_crawler:
     sources:
