@@ -6,15 +6,14 @@ ENV POSTGRES_DB=dhg503
 RUN apt-get update && apt-get install -y dos2unix && rm -rf /var/lib/apt/lists/*
 
 # Copy initialization files in correct order
-COPY init.sql /docker-entrypoint-initdb.d/init.sql
-COPY tutorial.sql /scripts/
+COPY backup.sql /docker-entrypoint-initdb.d/backup.sql
+COPY backup.sql /scripts/
 
 # Set permissions and convert line endings for all relevant files
-RUN dos2unix /usr/local/bin/check-customers.sh && \
-    dos2unix /docker-entrypoint-initdb.d/init.sql && \
-    dos2unix /scripts/tutorial.sql && \
-    chmod 755 /docker-entrypoint-initdb.d/init.sql && \
-    chmod 755 /scripts/tutorial.sql && \
+RUN dos2unix /docker-entrypoint-initdb.d/backup.sql && \
+    dos2unix /scripts/backup.sql && \
+    chmod 755 /docker-entrypoint-initdb.d/backup.sql && \
+    chmod 755 /scripts/backup.sql && \
     chmod 755 /scripts
 
 

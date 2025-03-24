@@ -11,4 +11,4 @@ if __name__ == "__main__":
     host = "0.0.0.0"
     port = 8000
 
-    uvicorn.run("src.api.root:app", host=host, port=port)
+    uvicorn.run("src.api.server:app", host=host, port=port)

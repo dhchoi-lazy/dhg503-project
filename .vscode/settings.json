@@ -20,5 +20,6 @@
   "python.terminal.activateEnvironment": true,
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.venvPath": "${workspaceFolder}/.venv",
-  "python.venvFolders": [".venv"]
+  "python.venvFolders": [".venv"],
+  "liveServer.settings.port": 5501
 }
