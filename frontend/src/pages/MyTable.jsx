@@ -17,7 +17,6 @@ const sampleArticle = {
 };
 
 const TOTAL_PAGES = 100;
-const API_URL = import.meta.env.VITE_API_BASE_URL || "";
 
 function MyTable() {
   const [articles, setArticles] = useState([]);
@@ -42,7 +41,7 @@ function MyTable() {
       setErrorList(null);
       console.log(`Fetching articles for page: ${page}`);
       try {
-        const response = await fetch(`${API_URL}/api/all_mytable?page=${page}`);
+        const response = await fetch(`/api/all_mytable?page=${page}`);
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);
         }
@@ -91,7 +90,7 @@ function MyTable() {
     setSelectedArticle(null); // Clear previous article while loading
     console.log(`Fetching article with ID: ${id}`);
     try {
-      const response = await fetch(`${API_URL}/api/article_mytable/${id}`);
+      const response = await fetch(`/api/article_mytable/${id}`);
       if (!response.ok) {
         // Try to load sample data on specific failure like 404 or server error
         if (response.status === 404 || response.status >= 500) {
@@ -133,9 +132,7 @@ function MyTable() {
 
     try {
       const response = await fetch(
-        `${API_URL}/api/search_mytable?keyword=${encodeURIComponent(
-          searchQuery.trim()
-        )}`
+        `/api/search_mytable?keyword=${encodeURIComponent(searchQuery.trim())}`
       );
       if (!response.ok) {
         throw new Error(`Server returned ${response.status}`);

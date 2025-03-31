@@ -33,7 +33,6 @@ function Explorer() {
 
   // Get URL query parameters
   const location = useLocation();
-  const API_URL = import.meta.env.VITE_API_BASE_URL || "";
 
   // Fetch Article List
   const fetchArticleList = useCallback(

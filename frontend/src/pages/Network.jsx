@@ -9,14 +9,11 @@ function Network() {
 
   const fgRef = useRef();
 
-  const API_URL = import.meta.env.VITE_API_BASE_URL || "";
   const fetchNetworkData = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch(
-        `${API_URL}/api/network_data?limit=${dataSize}`
-      );
+      const response = await fetch(`/api/network_data?limit=${dataSize}`);
       if (!response.ok) {
         throw new Error(`Failed to fetch network data: ${response.statusText}`);
       }
