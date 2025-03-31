@@ -17,10 +17,6 @@ app.add_middleware(
     allow_origins=[
         "*",  # Allow all origins
         "http://localhost",
-        "http://localhost:80",
-        "http://localhost:5173",
-        "http://ec2-16-163-139-185.ap-east-1.compute.amazonaws.com",
-        "http://ec2-16-163-139-185.ap-east-1.compute.amazonaws.com:80",
     ],
     allow_credentials=True,
     allow_methods=["*"],

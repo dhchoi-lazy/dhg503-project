@@ -1,12 +1,12 @@
-from fastapi import APIRouter, Query, HTTPException
+from fastapi import APIRouter, Query
 from sqlalchemy import text
 from src.database.db import connect_db
-import re
-
-mqshilu_router = APIRouter(tags=["mqshilu"])
 
 
-@mqshilu_router.get("/all_mytable")
+mytable_router = APIRouter(tags=["mytable"])
+
+
+@mytable_router.get("/all_mytable")
 def read_all_articles(page: int = Query(1, description="Page number")):
     limit = 100
     offset = (page - 1) * limit
@@ -34,7 +34,7 @@ def read_all_articles(page: int = Query(1, description="Page number")):
         }
 
 
-@mqshilu_router.get("/search_mytable")
+@mytable_router.get("/search_mytable")
 def search_articles(keyword: str = Query(..., description="Search keyword")):
     engine = connect_db()
     with engine.connect() as conn:

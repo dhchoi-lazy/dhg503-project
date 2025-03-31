@@ -83,7 +83,7 @@ function Header() {
                  }`
               }
             >
-              Network
+              My Table
             </NavLink>
           </li>
         </ul>
