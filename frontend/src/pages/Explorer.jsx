@@ -16,8 +16,6 @@ const sampleArticle = {
   king: "仁宗昭皇帝",
 };
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
-
 const TOTAL_PAGES = 100;
 
 function Explorer() {
@@ -35,6 +33,7 @@ function Explorer() {
 
   // Get URL query parameters
   const location = useLocation();
+  const API_URL = import.meta.env.VITE_API_BASE_URL || "";
 
   // Fetch Article List
   const fetchArticleList = useCallback(
@@ -44,26 +43,25 @@ function Explorer() {
       console.log(`Fetching articles for page: ${page}`);
       try {
         const response = await fetch(
-          `${API_BASE_URL}/api/all_articles?page=${page}`
+          `${API_URL}/api/all_articles?page=${page}`
         );
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);
         }
         const data = await response.json();
         setArticles(data.articles || []);
-        // If it's the first page load and no article is selected yet,
-        // select the first article from the list OR the default sample one
+
         if (page === 1 && !currentArticleId && data.articles?.length > 0) {
           setCurrentArticleId(data.articles[0].id);
         } else if (page === 1 && !currentArticleId) {
-          setCurrentArticleId(sampleArticle.id); // Fallback if list is empty
+          setCurrentArticleId(sampleArticle.id);
         }
       } catch (error) {
         console.error("Error fetching article list:", error);
         setErrorList(
           `Failed to load articles: ${error.message}. Please check if the API server is running.`
         );
-        setArticles([]); // Clear articles on error
+        setArticles([]);
         if (page === 1 && !currentArticleId) {
           setCurrentArticleId(sampleArticle.id); // Still try to load sample
         }
@@ -72,9 +70,8 @@ function Explorer() {
       }
     },
     [currentArticleId]
-  ); // Depend on currentArticleId to set initial selection correctly
+  );
 
-  // Parse articleId from URL parameters when component mounts
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const articleIdFromUrl = params.get("articleId");
@@ -85,24 +82,22 @@ function Explorer() {
     }
   }, [location]);
 
-  // Fetch Single Article
   const fetchArticle = useCallback(async (id) => {
-    if (!id) return; // Don't fetch if ID is null
+    if (!id) return;
 
     setIsLoadingArticle(true);
     setErrorArticle(null);
-    setSelectedArticle(null); // Clear previous article while loading
+    setSelectedArticle(null);
     console.log(`Fetching article with ID: ${id}`);
     try {
-      const response = await fetch(`${API_BASE_URL}/article/${id}`);
+      const response = await fetch(`${API_URL}/api/article/${id}`);
       if (!response.ok) {
-        // Try to load sample data on specific failure like 404 or server error
         if (response.status === 404 || response.status >= 500) {
           console.warn(
             `Article ${id} not found or server error (${response.status}), loading sample data.`
           );
           setSelectedArticle(sampleArticle);
-          setCurrentArticleId(sampleArticle.id); // Update ID to match sample
+          setCurrentArticleId(sampleArticle.id);
           setErrorArticle(`Article ${id} not found. Displaying sample.`);
         } else {
           throw new Error(`Server returned ${response.status}`);
@@ -136,9 +131,7 @@ function Explorer() {
 
     try {
       const response = await fetch(
-        `${API_BASE_URL}/search?keyword=${encodeURIComponent(
-          searchQuery.trim()
-        )}`
+        `/api/search?keyword=${encodeURIComponent(searchQuery.trim())}`
       );
       if (!response.ok) {
         throw new Error(`Server returned ${response.status}`);

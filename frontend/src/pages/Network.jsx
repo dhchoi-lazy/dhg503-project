@@ -9,14 +9,13 @@ function Network() {
 
   const fgRef = useRef();
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
-
+  const API_URL = import.meta.env.VITE_API_BASE_URL || "";
   const fetchNetworkData = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
       const response = await fetch(
-        `${API_BASE_URL}/api/network_data?limit=${dataSize}`
+        `${API_URL}/api/network_data?limit=${dataSize}`
       );
       if (!response.ok) {
         throw new Error(`Failed to fetch network data: ${response.statusText}`);
@@ -29,7 +28,7 @@ function Network() {
     } finally {
       setLoading(false);
     }
-  }, [dataSize, API_BASE_URL]);
+  }, [dataSize]);
 
   useEffect(() => {
     fetchNetworkData();

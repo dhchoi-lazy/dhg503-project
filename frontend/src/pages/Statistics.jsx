@@ -36,8 +36,6 @@ ChartJS.register(
   Filler
 );
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
-
 const THEME_COLORS = {
   primary: {
     light: "rgba(59, 130, 246, 0.1)",
@@ -96,13 +94,14 @@ function Statistics() {
   const [statisticsData, setStatisticsData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const API_URL = import.meta.env.VITE_API_BASE_URL || "";
 
   useEffect(() => {
     const fetchStatistics = async () => {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch(`${API_BASE_URL}/api/statistics`);
+        const response = await fetch(`${API_URL}/api/statistics`);
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);
         }
