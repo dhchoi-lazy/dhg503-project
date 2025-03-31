@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 
 import Sidebar from "../components/Sidebar";
 import MainContent from "../components/MainContent";
-import { Search } from "lucide-react";
 
 // Sample fallback data in case the API fails on initial load
 const sampleArticle = {
@@ -17,8 +16,7 @@ const sampleArticle = {
   king: "仁宗昭皇帝",
 };
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const TOTAL_PAGES = 100; // Assuming this is fixed for now
 

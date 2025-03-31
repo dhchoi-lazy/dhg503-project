@@ -43,7 +43,7 @@ services:
       - ./frontend:/app
     depends_on:
       - api
-    command: sh -c "yarn install && yarn dev --host"
+    command: sh -c "yarn install && yarn dev --host --mode production"
 
 volumes:
   postgres_data:
