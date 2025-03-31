@@ -51,30 +51,27 @@ function Explorer() {
         }
         const data = await response.json();
         setArticles(data.articles || []);
-        // If it's the first page load and no article is selected yet,
-        // select the first article from the list OR the default sample one
         if (page === 1 && !currentArticleId && data.articles?.length > 0) {
           setCurrentArticleId(data.articles[0].id);
         } else if (page === 1 && !currentArticleId) {
-          setCurrentArticleId(sampleArticle.id); // Fallback if list is empty
+          setCurrentArticleId(sampleArticle.id);
         }
       } catch (error) {
         console.error("Error fetching article list:", error);
         setErrorList(
           `Failed to load articles: ${error.message}. Please check if the API server is running.`
         );
-        setArticles([]); // Clear articles on error
+        setArticles([]);
         if (page === 1 && !currentArticleId) {
-          setCurrentArticleId(sampleArticle.id); // Still try to load sample
+          setCurrentArticleId(sampleArticle.id);
         }
       } finally {
         setIsLoadingList(false);
       }
     },
     [currentArticleId]
-  ); // Depend on currentArticleId to set initial selection correctly
+  );
 
-  // Parse articleId from URL parameters when component mounts
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const articleIdFromUrl = params.get("articleId");
@@ -85,24 +82,22 @@ function Explorer() {
     }
   }, [location]);
 
-  // Fetch Single Article
   const fetchArticle = useCallback(async (id) => {
-    if (!id) return; // Don't fetch if ID is null
+    if (!id) return;
 
     setIsLoadingArticle(true);
     setErrorArticle(null);
-    setSelectedArticle(null); // Clear previous article while loading
+    setSelectedArticle(null);
     console.log(`Fetching article with ID: ${id}`);
     try {
       const response = await fetch(`${API_BASE_URL}/article/${id}`);
       if (!response.ok) {
-        // Try to load sample data on specific failure like 404 or server error
         if (response.status === 404 || response.status >= 500) {
           console.warn(
             `Article ${id} not found or server error (${response.status}), loading sample data.`
           );
           setSelectedArticle(sampleArticle);
-          setCurrentArticleId(sampleArticle.id); // Update ID to match sample
+          setCurrentArticleId(sampleArticle.id);
           setErrorArticle(`Article ${id} not found. Displaying sample.`);
         } else {
           throw new Error(`Server returned ${response.status}`);
@@ -114,15 +109,13 @@ function Explorer() {
     } catch (error) {
       console.error("Error fetching article:", error);
       setErrorArticle(`Failed to load article ${id}: ${error.message}`);
-      // Load sample data as a fallback on fetch error
       setSelectedArticle(sampleArticle);
-      setCurrentArticleId(sampleArticle.id); // Update ID to match sample
+      setCurrentArticleId(sampleArticle.id);
     } finally {
       setIsLoadingArticle(false);
     }
-  }, []); // No dependencies needed here as ID is passed directly
+  }, []);
 
-  // Search articles
   const searchArticles = useCallback(async () => {
     if (!searchQuery.trim()) {
       setIsSearchMode(false);
@@ -162,7 +155,6 @@ function Explorer() {
     }
   }, [searchQuery, currentPage, fetchArticleList]);
 
-  // Effect to load article list when page changes
   useEffect(() => {
     if (!isSearchMode) {
       fetchArticleList(currentPage);

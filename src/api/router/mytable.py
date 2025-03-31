@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Query, HTTPException
 from sqlalchemy import text
 from src.database.db import connect_db
 
@@ -32,6 +32,19 @@ def read_all_articles(page: int = Query(1, description="Page number")):
             "total": total_count,
             "total_pages": (total_count + limit - 1) // limit,
         }
+
+
+@mytable_router.get("/article/{article_id}")
+def read_article_by_id(article_id: int):
+    engine = connect_db()
+    with engine.connect() as conn:
+        try:
+            query = text(f"SELECT * FROM mytable WHERE id = {article_id}")
+            result = conn.execute(query)
+            articles = [dict(row._mapping) for row in result]
+            return articles[0]
+        except Exception as e:
+            raise HTTPException(status_code=404, detail=f"Article not found")
 
 
 @mytable_router.get("/search_mytable")
