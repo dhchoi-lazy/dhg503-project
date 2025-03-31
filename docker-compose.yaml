@@ -37,18 +37,14 @@ services:
       - dhg503_network
 
   frontend:
-    image: node:20-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
     container_name: dhg503_frontend_container
-    working_dir: /app
     ports:
-      - "80:5173"
-    volumes:
-      - ./frontend:/app
-    environment:
-      - VITE_API_BASE_URL=http://host.docker.internal:8000
+      - "80:80"
     depends_on:
       - api
-    command: sh -c "yarn install && yarn build && vite --host 0.0.0.0"
     networks:
       - dhg503_network
 
