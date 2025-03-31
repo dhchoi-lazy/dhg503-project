@@ -71,6 +71,21 @@ function Header() {
               Network
             </NavLink>
           </li>
+          <li className="ml-6">
+            <NavLink
+              to="/mytable"
+              className={({ isActive }) =>
+                `text-secondary font-medium transition-all duration-300 px-2 py-2 relative hover:text-primary
+                 ${
+                   isActive
+                     ? "text-primary after:absolute after:bottom-[-3px] after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                     : "after:absolute after:bottom-[-3px] after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-width after:duration-300 hover:after:w-full"
+                 }`
+              }
+            >
+              Network
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
