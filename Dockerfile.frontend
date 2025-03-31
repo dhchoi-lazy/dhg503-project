@@ -5,7 +5,7 @@ COPY frontend/package.json frontend/yarn.lock ./
 RUN yarn install
 COPY frontend/ ./
 # Environment variables will be set at build time
-ARG VITE_API_BASE_URL=http://localhost  # Default to relative URLs in production
+ARG VITE_API_BASE_URL=  # Default to empty for relative URLs
 ENV VITE_API_BASE_URL=${VITE_API_BASE_URL}
 RUN yarn build
 
