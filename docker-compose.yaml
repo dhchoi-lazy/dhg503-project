@@ -44,8 +44,6 @@ services:
       - "80:5173"
     volumes:
       - ./frontend:/app
-    environment:
-      - VITE_API_BASE_URL=http://api:8000
     depends_on:
       - api
     command: sh -c "yarn install && yarn dev --host"

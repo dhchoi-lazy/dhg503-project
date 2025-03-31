@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
-import { getApiUrl } from "../utils/api";
 
 import Sidebar from "../components/Sidebar";
 import MainContent from "../components/MainContent";
@@ -17,7 +16,9 @@ const sampleArticle = {
   king: "仁宗昭皇帝",
 };
 
-const TOTAL_PAGES = 100; // Assuming this is fixed for now
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
+const TOTAL_PAGES = 100;
 
 function Explorer() {
   const [articles, setArticles] = useState([]);
@@ -42,7 +43,9 @@ function Explorer() {
       setErrorList(null);
       console.log(`Fetching articles for page: ${page}`);
       try {
-        const response = await fetch(getApiUrl(`all_articles?page=${page}`));
+        const response = await fetch(
+          `${API_BASE_URL}/all_articles?page=${page}`
+        );
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);
         }
@@ -91,7 +94,7 @@ function Explorer() {
     setSelectedArticle(null); // Clear previous article while loading
     console.log(`Fetching article with ID: ${id}`);
     try {
-      const response = await fetch(getApiUrl(`article/${id}`));
+      const response = await fetch(`${API_BASE_URL}/article/${id}`);
       if (!response.ok) {
         // Try to load sample data on specific failure like 404 or server error
         if (response.status === 404 || response.status >= 500) {
@@ -133,7 +136,9 @@ function Explorer() {
 
     try {
       const response = await fetch(
-        getApiUrl(`search?keyword=${encodeURIComponent(searchQuery.trim())}`)
+        `${API_BASE_URL}/search?keyword=${encodeURIComponent(
+          searchQuery.trim()
+        )}`
       );
       if (!response.ok) {
         throw new Error(`Server returned ${response.status}`);
