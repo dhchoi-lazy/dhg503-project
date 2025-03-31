@@ -21,5 +21,6 @@
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.venvPath": "${workspaceFolder}/.venv",
   "python.venvFolders": [".venv"],
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "git.ignoreLimitWarning": true
 }

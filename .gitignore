@@ -112,3 +112,5 @@ notebook/crawl.pyenv
 __pycache__/
 
 notebook/processing.ipynb
+
+.cursorignore

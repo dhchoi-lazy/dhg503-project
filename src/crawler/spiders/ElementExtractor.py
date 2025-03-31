@@ -31,26 +31,24 @@ class ElementExtractor(BaseCrawler):
         ):
 
             input_url = target.get("url")
-            self.logger.info(f"Processing url {input_url}")
 
             xpath = target.get("xpath")
 
             if not input_url or not xpath:
-                self.logger.error(f"Missing URL or XPath in target: {target}")
+
                 continue
 
             try:
                 html_content = self.fetch_page(input_url)
                 page = html.fromstring(html_content)
                 elements = page.xpath(xpath)
-                self.logger.info(f"Found {len(elements)} elements with XPath '{xpath}'")
+
                 for element in elements:
                     item = self.extract(element, **self.kwargs)
                     item["source_url"] = input_url
                     results.append(item)
 
             except Exception as e:
-                self.logger.error(f"Error processing target {input_url}: {e}")
                 raise
 
         save_json(

@@ -3,18 +3,23 @@ FROM postgres:latest
 ENV POSTGRES_USER=dhg503
 ENV POSTGRES_PASSWORD=dhg503dhg503
 ENV POSTGRES_DB=dhg503
-RUN apt-get update && apt-get install -y dos2unix && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y curl gzip dos2unix && \
+    rm -rf /var/lib/apt/lists/*
 
-# Copy initialization files in correct order
-COPY backup.sql /docker-entrypoint-initdb.d/backup.sql
-COPY backup.sql /scripts/
-
-# Set permissions and convert line endings for all relevant files
-RUN dos2unix /docker-entrypoint-initdb.d/backup.sql && \
-    dos2unix /scripts/backup.sql && \
-    chmod 755 /docker-entrypoint-initdb.d/backup.sql && \
-    chmod 755 /scripts/backup.sql && \
-    chmod 755 /scripts
-
-
+RUN echo "Downloading backup..." && \
+    curl -f -L -o /tmp/pg_backup.sql.gz https://r2.dh-choi.com/pg_backup.sql.gz && \
+    echo "Decompressing backup..." && \
+    gunzip /tmp/pg_backup.sql.gz && \
+    echo "Moving backup to initdb directory..." && \
+    mv /tmp/pg_backup.sql /docker-entrypoint-initdb.d/pg_backup.sql && \
+    echo "Applying dos2unix to initdb script..." && \
+    dos2unix /docker-entrypoint-initdb.d/pg_backup.sql && \
+    echo "Copying backup to /scripts..." && \
+    mkdir -p /scripts && \
+    cp /docker-entrypoint-initdb.d/pg_backup.sql /scripts/pg_backup.sql && \
+    echo "Applying dos2unix and chmod to /scripts/pg_backup.sql..." && \
+    dos2unix /scripts/pg_backup.sql && \
+    chmod 755 /scripts/pg_backup.sql && \
+    chmod 755 /scripts && \
+    echo "Setup complete."
 CMD ["postgres"]

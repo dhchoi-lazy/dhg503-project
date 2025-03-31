@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Fallback colors as CSS variables for direct reference */
+:root {
+  --primary: #8b4513;
+  --secondary: #d2691e;
+  --accent: #cd853f;
+  --background: #f5e8c9;
+  --paper: #f9f2e3;
+  --text: #2d1810;
+  --border: #c8ad8d;
+  --red-seal: #a02c2c;
+}
+
+/* Base styles for the document */
+html {
+  font-family: "Noto Serif SC", "STSong", serif;
+  color: #2d1810;
+  background-color: #f5e8c9;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+}

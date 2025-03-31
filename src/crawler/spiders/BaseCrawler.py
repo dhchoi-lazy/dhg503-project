@@ -36,8 +36,6 @@ class BaseCrawler:
         self.session = self._create_session()
         self._async_session = None
 
-        self.logger = logging.getLogger(self.__class__.__name__)
-
     def _get_random_user_agent(self):
         """Returns a random User-Agent string."""
         return random.choice(self.DEFAULT_USER_AGENTS)
@@ -76,16 +74,12 @@ class BaseCrawler:
             except requests.RequestException as e:
                 retry_count += 1
                 if retry_count > self.retries:
-                    self.logger.error(
-                        f"Failed to fetch {url} after {self.retries} retries: {e}"
-                    )
+
                     return None
 
                 # Calculate backoff time
                 backoff_time = self.backoff_factor * (2 ** (retry_count - 1))
-                self.logger.warning(
-                    f"Retry {retry_count}/{self.retries} for {url} after {backoff_time}s"
-                )
+
                 time.sleep(backoff_time)
 
                 # Try with a new user agent on each retry
@@ -99,7 +93,6 @@ class BaseCrawler:
                 response.raise_for_status()
                 return await response.text()
         except aiohttp.ClientError as e:
-            self.logger.error(f"Failed to fetch {url} asynchronously: {e}")
             return None
 
     def crawl(self):

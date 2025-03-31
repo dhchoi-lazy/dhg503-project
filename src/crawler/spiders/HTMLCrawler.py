@@ -23,7 +23,6 @@ class HTMLCrawler(BaseCrawler):
             target_urls = load_json(self.input_file)
 
             if not target_urls:
-                self.logger.error("No target_urls")
                 return []
 
             max_depth = (
@@ -38,9 +37,11 @@ class HTMLCrawler(BaseCrawler):
                 ]
 
             if not target_urls:
-                self.logger.warning("No target_urls found in the input file.")
+
                 continue
+
             for target_url in tqdm(target_urls):
+
                 key = target_url["key"]
                 html_content = self.fetch_page(target_url["url"])
                 page = clean_html(html_content, self.xpath)

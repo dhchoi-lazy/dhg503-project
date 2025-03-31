@@ -34,14 +34,16 @@ services:
     command: python -m scripts.serve
 
   frontend:
-    image: nginx:alpine
+    image: node:20-alpine
     container_name: dhg503_frontend_container
+    working_dir: /app
     ports:
-      - "80:80"
+      - "80:5173"
     volumes:
-      - ./frontend:/usr/share/nginx/html
+      - ./frontend:/app
     depends_on:
       - api
+    command: sh -c "yarn install && yarn dev --host"
 
 volumes:
   postgres_data:

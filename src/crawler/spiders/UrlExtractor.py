@@ -31,7 +31,6 @@ class UrlExtractor(ElementExtractor):
         for depth, target in enumerate(
             tqdm(self.targets, desc="Crawling depth levels")
         ):
-            self.logger.info(f"Processing depth {depth+1}/{len(self.targets)}")
             next_urls = self.process_depth(
                 current_urls, target["xpath"], depth, target.get("params", {})
             )
@@ -44,7 +43,6 @@ class UrlExtractor(ElementExtractor):
 
             # Set up for the next depth
             current_urls = next_urls
-            self.logger.info(f"Found {len(current_urls)} URLs to process at next depth")
             for url in current_urls:
                 # Create a hash key from the URL
                 url_hash = hashlib.md5(url["url"].encode()).hexdigest()
@@ -97,8 +95,7 @@ class UrlExtractor(ElementExtractor):
                             {"url": full_url, "text": current_text, "path": new_path}
                         )
             except Exception as e:
-
-                self.logger.error(f"Error processing {url_data['url']}: {e}")
+                raise e
 
         return next_urls
 
@@ -108,7 +105,6 @@ class UrlExtractor(ElementExtractor):
             html_content = self.fetch_page(url)
 
             if html_content is None:
-                self.logger.error(f"Failed to fetch {url}")
                 return []
 
             # Ensure html_content is a string
@@ -128,12 +124,9 @@ class UrlExtractor(ElementExtractor):
                     "contains(text(), 'China')", "contains(., 'China')"
                 )
                 elements = page.xpath(improved_xpath)
-                self.logger.info(f"Using improved XPath: '{improved_xpath}'")
-                self.logger.info(f"Found {len(elements)} elements")
+
             else:
                 elements = page.xpath(xpath)
-                self.logger.info(f"Using original XPath: '{xpath}'")
-                self.logger.info(f"Found {len(elements)} elements")
 
             # Extract the needed information from each element
             result = []
@@ -151,16 +144,11 @@ class UrlExtractor(ElementExtractor):
 
                     result.append({"url": url_attr, "text": text_content})
                 except Exception as e:
-                    self.logger.error(f"Error extracting element data: {e}")
+                    raise e
 
-            self.logger.info(f"Returning {len(result)} valid elements with links")
             return result
         except Exception as e:
-            self.logger.error(f"Error in extract_url_elements for {url}: {e}")
-            import traceback
-
-            self.logger.error(traceback.format_exc())
-            return []
+            raise e
 
     def build_path(self, parent_path, current_text):
 

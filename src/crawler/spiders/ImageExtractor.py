@@ -21,7 +21,7 @@ class ImageExtractor(ElementExtractor):
     def extract(self, element, **kwargs):
 
         if element.tag != "img":
-            self.logger.error(f"There is no image in the element: {element}")
+
             return {}
 
         try:
@@ -32,7 +32,7 @@ class ImageExtractor(ElementExtractor):
 
             return {"url": src, "alt": alt}
         except Exception as e:
-            self.logger.error(f"There is no image in the element: {element}")
+
             return {}
 
     def save_image(self, url):
@@ -40,7 +40,6 @@ class ImageExtractor(ElementExtractor):
         try:
             output_dir = self.kwargs.get("output_dir")
             if not output_dir:
-                self.logger.error("No output directory specified")
                 return False
 
             os.makedirs(output_dir, exist_ok=True)
@@ -50,7 +49,6 @@ class ImageExtractor(ElementExtractor):
 
             # Check if file already exists
             if os.path.exists(output_path):
-                self.logger.info(f"Image already exists: {output_path}")
                 return True
 
             # Add retry logic
@@ -74,15 +72,11 @@ class ImageExtractor(ElementExtractor):
                         for chunk in response.iter_content(chunk_size=8192):
                             f.write(chunk)
 
-                    self.logger.info(f"Saved image: {output_path}")
                     return True
 
                 except requests.exceptions.HTTPError as e:
                     if e.response.status_code == 403 and attempt < max_retries - 1:
                         wait_time = retry_delay * (2**attempt)  # Exponential backoff
-                        self.logger.warning(
-                            f"Got 403 error, retrying in {wait_time} seconds (attempt {attempt+1}/{max_retries})"
-                        )
                         import time
 
                         time.sleep(wait_time)
@@ -91,5 +85,4 @@ class ImageExtractor(ElementExtractor):
 
             return False
         except Exception as e:
-            self.logger.error(f"Error saving image {url}: {e}")
             return False

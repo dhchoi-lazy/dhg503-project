@@ -1,15 +1,10 @@
 import sys
 import os
-import json
-import logging
-from pathlib import Path
 
-from src.utils.logging import setup_logging
 from src.utils.config import load_config
-from src.crawler.utils.files import save_json
 
 # Import the classes directly from their respective modules
-from src.crawler.spiders.BaseCrawler import BaseCrawler
+
 from src.crawler.spiders.UrlExtractor import UrlExtractor
 from src.crawler.spiders.ImageExtractor import ImageExtractor
 from src.crawler.spiders.TextExtractor import TextExtractor
@@ -39,30 +34,23 @@ def main():
             crawler_class = crawler_class_map.get(crawler_class_name)
             if not crawler_class:
                 raise ValueError(f"Unknown crawler class: {crawler_class_name}")
-            logger = setup_logging(
-                module_name=f"crawler.{crawler_class_name}", num_log_files=5
-            )
-            logger.info(f"Starting {crawler_class_name} script")
-            logger.info(f"Running crawler: {crawler_class_name}")
 
             sources = crawler_class_config.get("sources", {})
             if not sources:
-                logger.error("No sources defined in crawler configuration")
+
                 sys.exit(1)
 
             for source_name, source_config in sources.items():
-                logger.info(f"Running {crawler_class_name} on {source_name}")
 
                 base_url = source_config.get("base_url")
                 if not base_url:
-                    logger.error(f"No Base URL defined for source: {source_name}")
+
                     sys.exit(1)
 
                 targets = source_config.get("targets", [])
                 source_config["source_name"] = source_name
 
                 if not targets:
-                    logger.error(f"No targets defined for source: {source_name}")
                     sys.exit(1)
 
                 for target in targets:
@@ -81,16 +69,12 @@ def main():
                     )
                     # Run the crawler and save the data
                     crawler.crawl()
-                    logger.info(f"Completed crawling for source: {source_name}")
 
                 except Exception as e:
-                    logger.exception(f"Error with source {source_name}: {e}")
+
                     continue
 
-            logger.info(f"Completed crawling for crawler: {crawler_class_name}")
-
     except Exception as e:
-        logger.exception(f"Error running crawler script: {e}")
         sys.exit(1)
 
 
