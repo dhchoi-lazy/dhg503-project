@@ -21,6 +21,7 @@ import {
   PieChart,
   TrendingUp,
 } from "lucide-react";
+import { getApiUrl } from "../utils/api";
 
 ChartJS.register(
   CategoryScale,
@@ -35,8 +36,6 @@ ChartJS.register(
   RadialLinearScale,
   Filler
 );
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const THEME_COLORS = {
   primary: {
@@ -102,7 +101,7 @@ function Statistics() {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch(`${API_BASE_URL}/statistics`);
+        const response = await fetch(getApiUrl("statistics"));
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);
         }

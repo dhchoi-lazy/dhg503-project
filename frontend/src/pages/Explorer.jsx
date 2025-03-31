@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { getApiUrl } from "../utils/api";
 
 import Sidebar from "../components/Sidebar";
 import MainContent from "../components/MainContent";
@@ -15,8 +16,6 @@ const sampleArticle = {
     "辛亥勑甘肅縂兵官都督費近聞賢義王太平為瓦賴瓦賴:抱本中本作瓦剌，是也。順寧王脫歡所侵害太平人馬潰散有迯至甘肅邊境潛住者爾等即整搠士馬哨瞭如果則遣人詔諭如果則遣人詔諭:三本作如果是實則遣人招諭。同來仍嚴束束:舊校改作約束。差去人善加撫恤毌盜其馬疋牛羊等物庶不失遠人來歸之心命羽林前衛指揮僉僉事指揮僉僉事:舊校刪一僉字。汪致淵子㒮祖龍職汪致淵子㒮祖龍職:舊校改㒮作豗，龍作襲。古麻剌等正國剌必等吉麻剌等正國剌必等:舊校改正國作國王。三本必作苾。遣頭目叭諦吉三等奉金葉表箋來朝貢方物賜之鈔幣賜之鈔幣:廣本幣下有有差二字。",
   king: "仁宗昭皇帝",
 };
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const TOTAL_PAGES = 100; // Assuming this is fixed for now
 
@@ -43,9 +42,7 @@ function Explorer() {
       setErrorList(null);
       console.log(`Fetching articles for page: ${page}`);
       try {
-        const response = await fetch(
-          `${API_BASE_URL}/all_articles?page=${page}`
-        );
+        const response = await fetch(getApiUrl(`all_articles?page=${page}`));
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);
         }
@@ -94,7 +91,7 @@ function Explorer() {
     setSelectedArticle(null); // Clear previous article while loading
     console.log(`Fetching article with ID: ${id}`);
     try {
-      const response = await fetch(`${API_BASE_URL}/article/${id}`);
+      const response = await fetch(getApiUrl(`article/${id}`));
       if (!response.ok) {
         // Try to load sample data on specific failure like 404 or server error
         if (response.status === 404 || response.status >= 500) {
@@ -136,9 +133,7 @@ function Explorer() {
 
     try {
       const response = await fetch(
-        `${API_BASE_URL}/search?keyword=${encodeURIComponent(
-          searchQuery.trim()
-        )}`
+        getApiUrl(`search?keyword=${encodeURIComponent(searchQuery.trim())}`)
       );
       if (!response.ok) {
         throw new Error(`Server returned ${response.status}`);

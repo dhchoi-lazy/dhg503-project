@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import ForceGraph2D from "react-force-graph-2d";
+import { ForceGraph2D } from "react-force-graph-2d";
 import { forceCollide } from "d3-force";
+import { getApiUrl } from "../utils/api";
+
 function Network() {
   const [graphData, setGraphData] = useState({ nodes: [], links: [] });
   const [loading, setLoading] = useState(true);
@@ -9,27 +11,23 @@ function Network() {
 
   const fgRef = useRef();
 
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
   const fetchNetworkData = useCallback(async () => {
+    setLoading(true);
+    setError(null);
     try {
-      setLoading(true);
-      setError(null);
-      const response = await fetch(
-        `${API_BASE_URL}/network_data?limit=${dataSize}`
-      );
+      const response = await fetch(getApiUrl(`network_data?limit=${dataSize}`));
       if (!response.ok) {
-        throw new Error(`Failed to fetch network data: ${response.statusText}`);
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const data = await response.json();
       setGraphData(data);
-    } catch (err) {
-      setError(err.message);
-      console.error("Error fetching network data:", err);
+    } catch (error) {
+      console.error("Error fetching network data:", error);
+      setError("Failed to load network data. Please try again later.");
     } finally {
       setLoading(false);
     }
-  }, [dataSize, API_BASE_URL]);
+  }, [dataSize]);
 
   useEffect(() => {
     fetchNetworkData();
