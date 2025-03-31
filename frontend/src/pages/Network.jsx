@@ -16,7 +16,7 @@ function Network() {
       setLoading(true);
       setError(null);
       const response = await fetch(
-        `${API_BASE_URL}/network_data?limit=${dataSize}`
+        `${API_BASE_URL}/api/network_data?limit=${dataSize}`
       );
       if (!response.ok) {
         throw new Error(`Failed to fetch network data: ${response.statusText}`);

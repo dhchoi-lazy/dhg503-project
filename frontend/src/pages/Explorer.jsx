@@ -44,7 +44,7 @@ function Explorer() {
       console.log(`Fetching articles for page: ${page}`);
       try {
         const response = await fetch(
-          `${API_BASE_URL}/all_articles?page=${page}`
+          `${API_BASE_URL}/api/all_articles?page=${page}`
         );
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);

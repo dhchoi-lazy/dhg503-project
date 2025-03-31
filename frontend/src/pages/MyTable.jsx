@@ -20,7 +20,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
 const TOTAL_PAGES = 100;
 
-function Explorer() {
+function MyTable() {
   const [articles, setArticles] = useState([]);
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [currentArticleId, setCurrentArticleId] = useState(null); // Start with null
@@ -44,34 +44,37 @@ function Explorer() {
       console.log(`Fetching articles for page: ${page}`);
       try {
         const response = await fetch(
-          `${API_BASE_URL}/all_mytable?page=${page}`
+          `${API_BASE_URL}/api/all_mytable?page=${page}`
         );
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);
         }
         const data = await response.json();
         setArticles(data.articles || []);
+        // If it's the first page load and no article is selected yet,
+        // select the first article from the list OR the default sample one
         if (page === 1 && !currentArticleId && data.articles?.length > 0) {
           setCurrentArticleId(data.articles[0].id);
         } else if (page === 1 && !currentArticleId) {
-          setCurrentArticleId(sampleArticle.id);
+          setCurrentArticleId(sampleArticle.id); // Fallback if list is empty
         }
       } catch (error) {
         console.error("Error fetching article list:", error);
         setErrorList(
           `Failed to load articles: ${error.message}. Please check if the API server is running.`
         );
-        setArticles([]);
+        setArticles([]); // Clear articles on error
         if (page === 1 && !currentArticleId) {
-          setCurrentArticleId(sampleArticle.id);
+          setCurrentArticleId(sampleArticle.id); // Still try to load sample
         }
       } finally {
         setIsLoadingList(false);
       }
     },
     [currentArticleId]
-  );
+  ); // Depend on currentArticleId to set initial selection correctly
 
+  // Parse articleId from URL parameters when component mounts
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const articleIdFromUrl = params.get("articleId");
@@ -82,22 +85,24 @@ function Explorer() {
     }
   }, [location]);
 
+  // Fetch Single Article
   const fetchArticle = useCallback(async (id) => {
-    if (!id) return;
+    if (!id) return; // Don't fetch if ID is null
 
     setIsLoadingArticle(true);
     setErrorArticle(null);
-    setSelectedArticle(null);
+    setSelectedArticle(null); // Clear previous article while loading
     console.log(`Fetching article with ID: ${id}`);
     try {
-      const response = await fetch(`${API_BASE_URL}/article/${id}`);
+      const response = await fetch(`${API_BASE_URL}/api/article_mytable/${id}`);
       if (!response.ok) {
+        // Try to load sample data on specific failure like 404 or server error
         if (response.status === 404 || response.status >= 500) {
           console.warn(
             `Article ${id} not found or server error (${response.status}), loading sample data.`
           );
           setSelectedArticle(sampleArticle);
-          setCurrentArticleId(sampleArticle.id);
+          setCurrentArticleId(sampleArticle.id); // Update ID to match sample
           setErrorArticle(`Article ${id} not found. Displaying sample.`);
         } else {
           throw new Error(`Server returned ${response.status}`);
@@ -109,13 +114,15 @@ function Explorer() {
     } catch (error) {
       console.error("Error fetching article:", error);
       setErrorArticle(`Failed to load article ${id}: ${error.message}`);
+      // Load sample data as a fallback on fetch error
       setSelectedArticle(sampleArticle);
-      setCurrentArticleId(sampleArticle.id);
+      setCurrentArticleId(sampleArticle.id); // Update ID to match sample
     } finally {
       setIsLoadingArticle(false);
     }
-  }, []);
+  }, []); // No dependencies needed here as ID is passed directly
 
+  // Search articles
   const searchArticles = useCallback(async () => {
     if (!searchQuery.trim()) {
       setIsSearchMode(false);
@@ -129,7 +136,7 @@ function Explorer() {
 
     try {
       const response = await fetch(
-        `${API_BASE_URL}/search_mytable?keyword=${encodeURIComponent(
+        `${API_BASE_URL}/api/search_mytable?keyword=${encodeURIComponent(
           searchQuery.trim()
         )}`
       );
@@ -155,6 +162,7 @@ function Explorer() {
     }
   }, [searchQuery, currentPage, fetchArticleList]);
 
+  // Effect to load article list when page changes
   useEffect(() => {
     if (!isSearchMode) {
       fetchArticleList(currentPage);
@@ -230,4 +238,4 @@ function Explorer() {
   );
 }
 
-export default Explorer;
+export default MyTable;

@@ -6,7 +6,7 @@ import re
 mqshilu_router = APIRouter(tags=["mqshilu"])
 
 
-@mqshilu_router.get("/all_articles")
+@mqshilu_router.get("/api/all_articles")
 def read_all_articles(page: int = Query(1, description="Page number")):
     limit = 100
     offset = (page - 1) * limit
@@ -34,7 +34,7 @@ def read_all_articles(page: int = Query(1, description="Page number")):
         }
 
 
-@mqshilu_router.get("/article/{article_id}")
+@mqshilu_router.get("/api/article/{article_id}")
 def read_article_by_id(article_id: int):
     engine = connect_db()
     with engine.connect() as conn:
@@ -47,7 +47,7 @@ def read_article_by_id(article_id: int):
             raise HTTPException(status_code=404, detail=f"Article not found")
 
 
-@mqshilu_router.get("/statistics")
+@mqshilu_router.get("/api/statistics")
 def read_statistics():
     engine = connect_db()
     with engine.connect() as conn:
@@ -75,7 +75,7 @@ def read_statistics():
         }
 
 
-@mqshilu_router.get("/search")
+@mqshilu_router.get("/api/search")
 def search_articles(keyword: str = Query(..., description="Search keyword")):
     engine = connect_db()
     with engine.connect() as conn:
@@ -86,7 +86,7 @@ def search_articles(keyword: str = Query(..., description="Search keyword")):
         return {"keyword": keyword, "total": len(articles), "articles": articles}
 
 
-@mqshilu_router.get("/network_data")
+@mqshilu_router.get("/api/network_data")
 def get_network_data(
     limit: int = Query(200, description="Number of articles to analyze")
 ):

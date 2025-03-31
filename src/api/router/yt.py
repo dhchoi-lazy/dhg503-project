@@ -16,7 +16,7 @@ TEMP_DIR.mkdir(exist_ok=True)
 youtube_router = APIRouter(tags=["youtube"])
 
 
-@youtube_router.get("/youtube/")
+@youtube_router.get("/api/youtube/")
 def get_youtube_data(url: str, background_tasks: BackgroundTasks):
 
     try:

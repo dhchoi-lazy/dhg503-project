@@ -6,7 +6,7 @@ from src.database.db import connect_db
 mytable_router = APIRouter(tags=["mytable"])
 
 
-@mytable_router.get("/all_mytable")
+@mytable_router.get("/api/all_mytable")
 def read_all_articles(page: int = Query(1, description="Page number")):
     limit = 100
     offset = (page - 1) * limit
@@ -34,7 +34,7 @@ def read_all_articles(page: int = Query(1, description="Page number")):
         }
 
 
-@mytable_router.get("/article/{article_id}")
+@mytable_router.get("/api/article_mytable/{article_id}")
 def read_article_by_id(article_id: int):
     engine = connect_db()
     with engine.connect() as conn:
@@ -47,7 +47,7 @@ def read_article_by_id(article_id: int):
             raise HTTPException(status_code=404, detail=f"Article not found")
 
 
-@mytable_router.get("/search_mytable")
+@mytable_router.get("/api/search_mytable")
 def search_articles(keyword: str = Query(..., description="Search keyword")):
     engine = connect_db()
     with engine.connect() as conn:
