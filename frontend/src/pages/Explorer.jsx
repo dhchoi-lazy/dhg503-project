@@ -42,9 +42,7 @@ function Explorer() {
       setErrorList(null);
       console.log(`Fetching articles for page: ${page}`);
       try {
-        const response = await fetch(
-          `${API_URL}/api/all_articles?page=${page}`
-        );
+        const response = await fetch(`/api/all_articles?page=${page}`);
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);
         }
@@ -90,7 +88,7 @@ function Explorer() {
     setSelectedArticle(null);
     console.log(`Fetching article with ID: ${id}`);
     try {
-      const response = await fetch(`${API_URL}/api/article/${id}`);
+      const response = await fetch(`/api/article/${id}`);
       if (!response.ok) {
         if (response.status === 404 || response.status >= 500) {
           console.warn(
