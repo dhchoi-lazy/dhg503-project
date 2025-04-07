@@ -26,7 +26,8 @@ RUN echo "Downloading backup..." && \
 # Add a script to create mytable
 RUN echo "CREATE TABLE IF NOT EXISTS mytable (id SERIAL PRIMARY KEY, title TEXT, year INTEGER, date DATE, content TEXT);" > /docker-entrypoint-initdb.d/create_mytable.sql
 
-# Add a test entry to mytable
+
 RUN echo "INSERT INTO mytable (title, year, date, content) VALUES ('學而', 2025, '2025-01-01', '學而時習之，不亦說乎？有朋自遠方來，不亦樂乎？人不知而不慍，不亦君子乎？');" >> /docker-entrypoint-initdb.d/create_mytable.sql
+RUN echo "INSERT INTO mytable (title, year, date, content) VALUES ('為政', 2025, '2025-01-01', '為政以德，譬如北辰，居其所而眾星共之');" >> /docker-entrypoint-initdb.d/create_mytable.sq
 
 CMD ["postgres"]
