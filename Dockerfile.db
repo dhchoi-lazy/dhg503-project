@@ -22,4 +22,8 @@ RUN echo "Downloading backup..." && \
     chmod 755 /scripts/pg_backup.sql && \
     chmod 755 /scripts && \
     echo "Setup complete."
+
+# Add a script to create mytable
+RUN echo "CREATE TABLE IF NOT EXISTS mytable (id SERIAL PRIMARY KEY, name TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);" > /docker-entrypoint-initdb.d/create_mytable.sql
+
 CMD ["postgres"]
