@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpenText, Users, Search, BarChart, Network } from "lucide-react";
+import { BookOpenText, BarChart, Network } from "lucide-react";
 
 function Home() {
   return (

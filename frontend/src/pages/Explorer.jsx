@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import MainContent from "../components/MainContent";
 
-// Sample fallback data in case the API fails on initial load
 const sampleArticle = {
   id: 100,
   url: "https://sillok.history.go.kr/mc/id/msilok_003_0060_0010_0010_0100_0010",
@@ -21,7 +20,7 @@ const TOTAL_PAGES = 100;
 function Explorer() {
   const [articles, setArticles] = useState([]);
   const [selectedArticle, setSelectedArticle] = useState(null);
-  const [currentArticleId, setCurrentArticleId] = useState(null); // Start with null
+  const [currentArticleId, setCurrentArticleId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoadingList, setIsLoadingList] = useState(false);
   const [isLoadingArticle, setIsLoadingArticle] = useState(false);
@@ -31,10 +30,8 @@ function Explorer() {
   const [isSearchMode, setIsSearchMode] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
 
-  // Get URL query parameters
   const location = useLocation();
 
-  // Fetch Article List
   const fetchArticleList = useCallback(
     async (page) => {
       setIsLoadingList(true);
@@ -60,7 +57,7 @@ function Explorer() {
         );
         setArticles([]);
         if (page === 1 && !currentArticleId) {
-          setCurrentArticleId(sampleArticle.id); // Still try to load sample
+          setCurrentArticleId(sampleArticle.id);
         }
       } finally {
         setIsLoadingList(false);
@@ -87,6 +84,8 @@ function Explorer() {
     setSelectedArticle(null);
     console.log(`Fetching article with ID: ${id}`);
     try {
+      // IMPORTANT: The API endpoint is /api/article/${id}.
+      // YOU CAN CHANGE ANY API ENDPOINT YOU WANT.
       const response = await fetch(`/api/article/${id}`);
       if (!response.ok) {
         if (response.status === 404 || response.status >= 500) {
@@ -106,15 +105,14 @@ function Explorer() {
     } catch (error) {
       console.error("Error fetching article:", error);
       setErrorArticle(`Failed to load article ${id}: ${error.message}`);
-      // Load sample data as a fallback on fetch error
+
       setSelectedArticle(sampleArticle);
-      setCurrentArticleId(sampleArticle.id); // Update ID to match sample
+      setCurrentArticleId(sampleArticle.id);
     } finally {
       setIsLoadingArticle(false);
     }
-  }, []); // No dependencies needed here as ID is passed directly
+  }, []);
 
-  // Search articles
   const searchArticles = useCallback(async () => {
     if (!searchQuery.trim()) {
       setIsSearchMode(false);
@@ -137,7 +135,6 @@ function Explorer() {
       const data = await response.json();
       setArticles(data.articles || []);
 
-      // Select first search result or keep current if there are no results
       if (data.articles?.length > 0) {
         setCurrentArticleId(data.articles[0].id);
       }
@@ -146,25 +143,22 @@ function Explorer() {
       setErrorList(
         `Failed to search: ${error.message}. Please check if the API server is running.`
       );
-      setArticles([]); // Clear articles on error
+      setArticles([]);
     } finally {
       setIsSearching(false);
     }
   }, [searchQuery, currentPage, fetchArticleList]);
 
-  // Effect to load article list when page changes
   useEffect(() => {
     if (!isSearchMode) {
       fetchArticleList(currentPage);
     }
   }, [currentPage, fetchArticleList, isSearchMode]);
 
-  // Effect to load specific article when ID changes
   useEffect(() => {
     fetchArticle(currentArticleId);
   }, [currentArticleId, fetchArticle]);
 
-  // Handlers
   const handleSelectArticle = (id) => {
     setCurrentArticleId(id);
   };

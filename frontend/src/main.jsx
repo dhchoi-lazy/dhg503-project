@@ -4,14 +4,12 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 
-// Add Google Font for Chinese text
 const fontLink = document.createElement("link");
 fontLink.rel = "stylesheet";
 fontLink.href =
   "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap";
 document.head.appendChild(fontLink);
 
-// Add font and styles to body
 document.body.classList.add(
   "font-serif",
   "bg-background",

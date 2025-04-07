@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    // Changed bg-paper to bg-white
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-3 bg-primary border-b-2 border-primary shadow-md h-[70px]">
       <div className="text-2xl font-bold text-primary flex items-center gap-2">
         <NavLink to={"/"}>明清實錄</NavLink>
@@ -13,7 +12,7 @@ function Header() {
           <li className="ml-6">
             <NavLink
               to="/"
-              end // Added 'end' prop for more accurate active state matching on the root path
+              end
               className={({ isActive }) =>
                 `text-secondary font-medium transition-all duration-300 px-2 py-2 relative hover:text-primary
                  ${

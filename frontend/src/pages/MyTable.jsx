@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
-
 import Sidebar from "../components/Sidebar";
 import MainContent from "../components/MainContent";
 
-// Sample fallback data in case the API fails on initial load
 const sampleArticle = {
   id: 100,
   url: "https://sillok.history.go.kr/mc/id/msilok_003_0060_0010_0010_0100_0010",
@@ -21,7 +19,7 @@ const TOTAL_PAGES = 100;
 function MyTable() {
   const [articles, setArticles] = useState([]);
   const [selectedArticle, setSelectedArticle] = useState(null);
-  const [currentArticleId, setCurrentArticleId] = useState(null); // Start with null
+  const [currentArticleId, setCurrentArticleId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoadingList, setIsLoadingList] = useState(false);
   const [isLoadingArticle, setIsLoadingArticle] = useState(false);
@@ -31,46 +29,45 @@ function MyTable() {
   const [isSearchMode, setIsSearchMode] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
 
-  // Get URL query parameters
   const location = useLocation();
 
-  // Fetch Article List
   const fetchArticleList = useCallback(
     async (page) => {
       setIsLoadingList(true);
       setErrorList(null);
       console.log(`Fetching articles for page: ${page}`);
       try {
+        // IMPORTANT: The API endpoint is /api/all_mytable?page=${page}.
+        // YOU CAN CHANGE ANY API ENDPOINT YOU WANT.
+        // In this case, you must have `id` column in the data.
         const response = await fetch(`/api/all_mytable?page=${page}`);
         if (!response.ok) {
           throw new Error(`Server returned ${response.status}`);
         }
         const data = await response.json();
         setArticles(data.articles || []);
-        // If it's the first page load and no article is selected yet,
-        // select the first article from the list OR the default sample one
+
         if (page === 1 && !currentArticleId && data.articles?.length > 0) {
           setCurrentArticleId(data.articles[0].id);
         } else if (page === 1 && !currentArticleId) {
-          setCurrentArticleId(sampleArticle.id); // Fallback if list is empty
+          setCurrentArticleId(sampleArticle.id);
         }
       } catch (error) {
         console.error("Error fetching article list:", error);
         setErrorList(
           `Failed to load articles: ${error.message}. Please check if the API server is running.`
         );
-        setArticles([]); // Clear articles on error
+        setArticles([]);
         if (page === 1 && !currentArticleId) {
-          setCurrentArticleId(sampleArticle.id); // Still try to load sample
+          setCurrentArticleId(sampleArticle.id);
         }
       } finally {
         setIsLoadingList(false);
       }
     },
     [currentArticleId]
-  ); // Depend on currentArticleId to set initial selection correctly
+  );
 
-  // Parse articleId from URL parameters when component mounts
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const articleIdFromUrl = params.get("articleId");
@@ -81,24 +78,22 @@ function MyTable() {
     }
   }, [location]);
 
-  // Fetch Single Article
   const fetchArticle = useCallback(async (id) => {
-    if (!id) return; // Don't fetch if ID is null
+    if (!id) return;
 
     setIsLoadingArticle(true);
     setErrorArticle(null);
-    setSelectedArticle(null); // Clear previous article while loading
+    setSelectedArticle(null);
     console.log(`Fetching article with ID: ${id}`);
     try {
       const response = await fetch(`/api/article_mytable/${id}`);
       if (!response.ok) {
-        // Try to load sample data on specific failure like 404 or server error
         if (response.status === 404 || response.status >= 500) {
           console.warn(
             `Article ${id} not found or server error (${response.status}), loading sample data.`
           );
           setSelectedArticle(sampleArticle);
-          setCurrentArticleId(sampleArticle.id); // Update ID to match sample
+          setCurrentArticleId(sampleArticle.id);
           setErrorArticle(`Article ${id} not found. Displaying sample.`);
         } else {
           throw new Error(`Server returned ${response.status}`);
@@ -110,13 +105,12 @@ function MyTable() {
     } catch (error) {
       console.error("Error fetching article:", error);
       setErrorArticle(`Failed to load article ${id}: ${error.message}`);
-      // Load sample data as a fallback on fetch error
       setSelectedArticle(sampleArticle);
-      setCurrentArticleId(sampleArticle.id); // Update ID to match sample
+      setCurrentArticleId(sampleArticle.id);
     } finally {
       setIsLoadingArticle(false);
     }
-  }, []); // No dependencies needed here as ID is passed directly
+  }, []);
 
   // Search articles
   const searchArticles = useCallback(async () => {
@@ -141,7 +135,6 @@ function MyTable() {
       const data = await response.json();
       setArticles(data.articles || []);
 
-      // Select first search result or keep current if there are no results
       if (data.articles?.length > 0) {
         setCurrentArticleId(data.articles[0].id);
       }
@@ -150,25 +143,22 @@ function MyTable() {
       setErrorList(
         `Failed to search: ${error.message}. Please check if the API server is running.`
       );
-      setArticles([]); // Clear articles on error
+      setArticles([]);
     } finally {
       setIsSearching(false);
     }
   }, [searchQuery, currentPage, fetchArticleList]);
 
-  // Effect to load article list when page changes
   useEffect(() => {
     if (!isSearchMode) {
       fetchArticleList(currentPage);
     }
   }, [currentPage, fetchArticleList, isSearchMode]);
 
-  // Effect to load specific article when ID changes
   useEffect(() => {
     fetchArticle(currentArticleId);
   }, [currentArticleId, fetchArticle]);
 
-  // Handlers
   const handleSelectArticle = (id) => {
     setCurrentArticleId(id);
   };

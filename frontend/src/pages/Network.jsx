@@ -110,6 +110,13 @@ function Network() {
         Historical Figure Network Visualization
       </h1>
 
+      <div className="text-center mb-4 text-secondary italic">
+        <p>
+          This network visualization is for demonstration purposes only. The
+          actual data may differ slightly from what is shown here.
+        </p>
+      </div>
+
       <div className="mb-6">
         <div className="flex justify-center items-center gap-4 mb-2">
           <label

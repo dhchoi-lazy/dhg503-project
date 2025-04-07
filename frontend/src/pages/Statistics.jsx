@@ -184,7 +184,6 @@ function Statistics() {
     },
   };
 
-  // Line chart options
   const lineOptions = {
     ...sharedOptions,
     scales: {
@@ -223,7 +222,6 @@ function Statistics() {
     },
   };
 
-  // Doughnut chart options
   const doughnutOptions = {
     ...sharedOptions,
     cutout: "70%",
@@ -236,7 +234,6 @@ function Statistics() {
     },
   };
 
-  // Radar chart options
   const radarOptions = {
     ...sharedOptions,
     scales: {
@@ -267,16 +264,13 @@ function Statistics() {
     },
   };
 
-  // Prepare chart data
   const prepareChartData = () => {
     if (!statisticsData) return null;
 
-    // Sort year data chronologically
     const sortedYearData = [...statisticsData.cnt_by_year].sort(
       (a, b) => parseInt(a.year) - parseInt(b.year)
     );
 
-    // Store the sorted data for use in the component
     const firstYear =
       sortedYearData.length > 0 ? sortedYearData[0].year : "N/A";
     const lastYear =
@@ -329,7 +323,6 @@ function Statistics() {
       ],
     };
 
-    // Radar chart for comparing kings by percentage of total
     const total = statisticsData.total;
     const radarData = {
       labels: statisticsData.cnt_by_king.map((item) => item.king),
@@ -355,7 +348,6 @@ function Statistics() {
 
   const chartData = prepareChartData();
 
-  // Common card styling
   const cardStyle = "bg-primary rounded-lg shadow-md p-5";
   const chartContainerStyle = "h-80 md:h-96";
   const titleStyle = "text-lg font-semibold text-gray-800 mb-4";
@@ -397,7 +389,6 @@ function Statistics() {
     <div className="min-h-screen p-4 md:p-6 bg-background mx-auto w-full">
       {chartData && (
         <div className="max-w-7xl mx-auto">
-          {/* Summary Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
             <div className={`${cardStyle} flex items-center`}>
               <div className="p-3 bg-blue-100 rounded-lg mr-4">
@@ -442,7 +433,6 @@ function Statistics() {
             </div>
           </div>
 
-          {/* Chart Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
             <div className={cardStyle}>
               <h2 className={titleStyle}>Articles by King</h2>
