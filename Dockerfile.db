@@ -24,7 +24,7 @@ RUN echo "Downloading backup..." && \
     echo "Setup complete."
 
 # Add a script to create mytable
-RUN echo "CREATE TABLE IF NOT EXISTS mytable (id SERIAL PRIMARY KEY, name TEXT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);" > /docker-entrypoint-initdb.d/create_mytable.sql
+RUN echo "CREATE TABLE IF NOT EXISTS mytable (id SERIAL PRIMARY KEY, title TEXT, date DATE, content TEXT);" > /docker-entrypoint-initdb.d/create_mytable.sql
 
 # Add a test entry to mytable
 RUN echo "INSERT INTO mytable (title, date, content) VALUES ('Test Entry', '2025-01-01', 'This is a test entry.');" >> /docker-entrypoint-initdb.d/create_mytable.sql
