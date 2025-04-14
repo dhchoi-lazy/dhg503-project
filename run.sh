@@ -53,6 +53,31 @@ else
      # if [ $? -ne 0 ]; then ... exit ... fi
 fi
 
+# --- Pre-check for Rust/Cargo on Windows ---
+if [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+    if ! command -v cargo &> /dev/null; then
+        echo -e "${YELLOW}Rust (Cargo) is not detected in your PATH.${NC}"
+        echo -e "${YELLOW}Some Python dependencies on Windows require Rust to compile.${NC}"
+        if command -v curl &> /dev/null; then
+            echo -e "${BLUE}Please install the Rust toolchain by running the following command in your terminal:${NC}"
+            echo -e "${GREEN}    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh${NC}"
+            echo -e "${YELLOW}Follow the prompts in the installer. You may need to restart your terminal after installation.${NC}"
+            echo -e "${YELLOW}Once Rust is installed, re-run this script (${0}).${NC}"
+            exit 1 # Exit so user can run the command
+        else
+            echo -e "${RED}'curl' command is not found.${NC}"
+            echo -e "${RED}Cannot provide the automatic Rust installation command.${NC}"
+            echo -e "${YELLOW}Please install 'curl' first, or install Rust manually from https://rustup.rs/${NC}"
+            echo -e "${YELLOW}Once Rust is installed, re-run this script (${0}).${NC}"
+            exit 1
+        fi
+    # else
+        # Optional: Add message if cargo *is* found
+        # echo -e "${BLUE}Rust (Cargo) detected.${NC}"
+    fi
+fi
+# --- End Pre-check ---
+
 # Step 1: Set up virtual environment and install backend dependencies
 echo -e "\n${GREEN}Step 1: Setting up virtual environment and installing backend dependencies...${NC}"
 
