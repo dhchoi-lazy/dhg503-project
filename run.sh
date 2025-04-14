@@ -21,69 +21,23 @@ if ! command -v python3 &> /dev/null; then
     exit 1
 fi
 
-# Function to install uv based on OS
-install_uv() {
-    echo -e "${YELLOW}uv not found. Would you like to install it? (y/n)${NC}"
-    read -r install_choice
-    
-    if [[ $install_choice != "y" && $install_choice != "Y" ]]; then
-        echo -e "${YELLOW}Skipping uv installation.${NC}"
-        return
-    fi
-    
-    echo -e "${BLUE}Installing uv package manager...${NC}"
-    
-    # Detect OS
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        # macOS
-        echo -e "${BLUE}Detected macOS. Installing uv...${NC}"
-        curl -LsSf https://astral.sh/uv/install.sh | sh
-    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        # Linux
-        echo -e "${BLUE}Detected Linux. Installing uv...${NC}"
-        curl -LsSf https://astral.sh/uv/install.sh | sh
-    elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
-        # Windows (Git Bash, MinGW, Cygwin)
-        echo -e "${BLUE}Detected Windows. Installing uv...${NC}"
-        powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-    else
-        echo -e "${RED}Unsupported OS: $OSTYPE. Please install uv manually.${NC}"
-        return 1
-    fi
-    
-    echo -e "${GREEN}uv installation completed.${NC}"
-    echo -e "${YELLOW}Please restart this script for the changes to take effect.${NC}"
-    exit 0
-}
-
-# Check if pip or uv is installed
-USE_UV=false
-if command -v uv &> /dev/null; then
-    echo -e "${GREEN}uv package manager found. Will use uv for dependency management.${NC}"
-    USE_UV=true
-elif command -v pip3 &> /dev/null; then
-    echo -e "${YELLOW}pip3 found but uv is recommended for better performance.${NC}"
-    install_uv
-else
-    echo -e "${RED}Neither pip3 nor uv is installed.${NC}"
-    install_uv
-    if [ $? -ne 0 ]; then
-        echo -e "${RED}Please install pip or uv manually.${NC}"
-        exit 1
-    fi
+# Check if pip is installed
+if ! command -v pip3 &> /dev/null; then
+    echo -e "${RED}pip3 is not installed. Please install pip for Python 3.${NC}"
+    echo -e "${YELLOW}You can usually install it with 'sudo apt update && sudo apt install python3-pip' on Debian/Ubuntu or 'brew install python3' on macOS.${NC}"
+    exit 1
 fi
 
 # Step 1: Set up virtual environment and install backend dependencies
 echo -e "\n${GREEN}Step 1: Setting up virtual environment and installing backend dependencies...${NC}"
-# No need to cd backend, requirements-server.txt is now in the root
 
 # Create and activate virtual environment
 if [ ! -d ".venv" ]; then
-    echo -e "${BLUE}Creating virtual environment in .venv directory...${NC}"
-    if [ "$USE_UV" = true ]; then
-        uv venv .venv
-    else
-        python3 -m venv .venv
+    echo -e "${BLUE}Creating virtual environment in .venv directory using python3 -m venv...${NC}"
+    python3 -m venv .venv
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}Failed to create virtual environment.${NC}"
+        exit 1
     fi
 fi
 
@@ -97,16 +51,13 @@ else
     source .venv/bin/activate
 fi
 
-# Install dependencies from root requirements-server.txt
-if [ "$USE_UV" = true ]; then
-    echo -e "${BLUE}Installing dependencies using uv...${NC}"
-    uv pip install -r requirements-server.txt
-else
-    echo -e "${BLUE}Installing dependencies using pip...${NC}"
-    pip3 install -r requirements-server.txt
+# Install dependencies from root requirements-server.txt using pip
+echo -e "${BLUE}Installing dependencies using pip...${NC}"
+pip3 install -r requirements-server.txt
+if [ $? -ne 0 ]; then
+    echo -e "${RED}Failed to install dependencies from requirements-server.txt.${NC}"
+    exit 1
 fi
-
-# No need for cd ..
 
 # Step 2: Create config directory if it doesn't exist
 echo -e "\n${GREEN}Step 2: Creating config directory if needed...${NC}"
@@ -122,18 +73,39 @@ echo -e "${YELLOW}Note: Running on port 80 may require administrator/root privil
 if [ -d "server-setting/frontend/dist" ]; then
     cd server-setting/frontend/dist || { echo -e "${RED}Failed to enter server-setting/frontend/dist directory!${NC}"; exit 1; }
     echo -e "${BLUE}Serving files from $(pwd) on port 80 in the background...${NC}"
+    # Use python from the virtual environment
+    VENV_PYTHON=""
     if [ -f "../../../.venv/bin/python" ]; then
-        nohup ../../../.venv/bin/python -m http.server 80 &> frontend_server.log &
+        VENV_PYTHON="../../../.venv/bin/python"
     elif [ -f "../../../.venv/Scripts/python.exe" ]; then
-        # Running background tasks in Git Bash/MinGW on Windows can be tricky.
-        # Using start /B for a non-console background process.
-        start /B ../../../.venv/Scripts/python.exe -m http.server 80 &> frontend_server.log
-    else
-        echo -e "${YELLOW}Virtual environment python not found, attempting with system python...${NC}"
-        nohup python3 -m http.server 80 &> frontend_server.log &
+        VENV_PYTHON="../../../.venv/Scripts/python.exe"
     fi
-    FRONTEND_PID=$!
-    echo -e "${GREEN}Frontend server started in background (PID: $FRONTEND_PID). Log: server-setting/frontend/dist/frontend_server.log${NC}"
+
+    if [ -n "$VENV_PYTHON" ]; then
+        echo -e "${BLUE}Using virtual environment python: $VENV_PYTHON${NC}"
+        if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+            # Running background tasks in Git Bash/MinGW on Windows can be tricky.
+            # Using start /B for a non-console background process.
+             start /B "$VENV_PYTHON" -m http.server 80 &> frontend_server.log
+        else
+             nohup "$VENV_PYTHON" -m http.server 80 &> frontend_server.log &
+        fi
+    else
+        echo -e "${YELLOW}Virtual environment python not found, attempting with system python3...${NC}"
+        if ! command -v python3 &> /dev/null; then
+             echo -e "${RED}System python3 not found. Cannot start frontend server.${NC}"
+             cd ../../.. # Go back to project root
+             exit 1
+        fi
+         if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+             start /B python3 -m http.server 80 &> frontend_server.log
+         else
+             nohup python3 -m http.server 80 &> frontend_server.log &
+         fi
+    fi
+
+    FRONTEND_PID=$! # Note: Getting PID might be unreliable with 'start /B' on Windows
+    echo -e "${GREEN}Frontend server started in background (PID: $FRONTEND_PID might be inaccurate on Windows). Log: server-setting/frontend/dist/frontend_server.log${NC}"
     cd ../../.. # Go back to project root
 else
     echo -e "${YELLOW}Directory server-setting/frontend/dist not found. Skipping frontend server start.${NC}"
@@ -147,12 +119,24 @@ echo -e "${YELLOW}The backend API is running at http://localhost:8888${NC}"
 echo -e "${YELLOW}Press Ctrl+C to stop the backend server.${NC}"
 # Execute main.py from the server-setting/backend directory using the venv python
 
-# Make sure we're still using the virtual environment
+# Ensure we use the virtual environment's python
+VENV_PYTHON_EXEC=""
 if [ -f ".venv/bin/python" ]; then
-    .venv/bin/python server-setting/backend/main.py
+    VENV_PYTHON_EXEC=".venv/bin/python"
 elif [ -f ".venv/Scripts/python.exe" ]; then
-    .venv/Scripts/python.exe server-setting/backend/main.py
+    VENV_PYTHON_EXEC=".venv/Scripts/python.exe"
+fi
+
+if [ -n "$VENV_PYTHON_EXEC" ]; then
+    "$VENV_PYTHON_EXEC" server-setting/backend/main.py
 else
-    echo -e "${YELLOW}Virtual environment python not found, using system python to run server-setting/backend/main.py...${NC}"
+    echo -e "${YELLOW}Virtual environment python not found, attempting with system python3 to run server-setting/backend/main.py...${NC}"
+     if ! command -v python3 &> /dev/null; then
+         echo -e "${RED}System python3 not found. Cannot start backend server.${NC}"
+         exit 1
+     fi
     python3 server-setting/backend/main.py
-fi 
+fi
+
+# Optional: Clean up background process on exit (may not work reliably across platforms)
+# trap "echo 'Stopping frontend server...'; kill $FRONTEND_PID 2>/dev/null" EXIT 
