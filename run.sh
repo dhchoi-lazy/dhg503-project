@@ -50,8 +50,8 @@ else
     echo -e "${GREEN}Using functional Python command: $PYTHON_CMD${NC}"
 fi
 
-# Step 1: Set up virtual environment and install backend dependencies
-echo -e "\n${GREEN}Step 1: Setting up virtual environment and installing backend dependencies...${NC}"
+# Step 1: Set up virtual environment
+echo -e "\n${GREEN}Step 1: Setting up virtual environment...${NC}"
 
 VENV_DIR=".venv"
 VENV_BIN_DIR="$VENV_DIR/bin" # Linux/macOS default
@@ -63,7 +63,7 @@ if [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "
 fi
 VENV_ACTIVATE_PATH="$VENV_BIN_DIR/$VENV_ACTIVATE_SCRIPT"
 
-# Create virtual environment if it doesn't exist or seems incomplete
+# Create virtual environment if it doesn't exist or is incomplete
 venv_ok=false
 if [ -d "$VENV_DIR" ] && [ -f "$VENV_ACTIVATE_PATH" ]; then
     echo -e "${BLUE}Virtual environment '$VENV_DIR' already exists and seems complete.${NC}"
@@ -108,7 +108,7 @@ else
                 sudo apt update && sudo apt install -y "$suggested_package"
                 install_exit_code=$?
                 if [ $install_exit_code -eq 0 ]; then
-                    echo -e "${GREEN}$suggested_package installation command executed successfully.${NC}"
+                    echo -e "${GREEN}$suggested_package installed successfully.${NC}"
                     echo -e "${YELLOW}Please re-run this script to create the virtual environment.${NC}"
                     rm -f "$venv_error_log"
                     exit 0
@@ -125,13 +125,14 @@ else
         if $is_windows && echo "$error_output" | grep -q "Python was not found"; then
             echo -e "${YELLOW}Hint: On Windows, this might be the Microsoft Store alias. Disable that or install a full Python version.${NC}"
         fi
+
         echo -e "${RED}Virtual environment creation error details:${NC}"
         echo "$error_output"
         rm -f "$venv_error_log"
         exit 1
     else
         if [ ! -f "$VENV_ACTIVATE_PATH" ]; then
-            echo -e "${RED}Virtual environment created (exit code 0), but activation script '$VENV_ACTIVATE_PATH' is missing!${NC}"
+            echo -e "${RED}Virtual environment created (exit code 0), but '$VENV_ACTIVATE_PATH' is missing!${NC}"
             if [[ "$OSTYPE" == "linux-gnu"* ]]; then
                 if [ -f /etc/debian_version ] || grep -qi "debian" /etc/os-release || grep -qi "ubuntu" /etc/os-release; then
                     echo -e "${YELLOW}On Debian/Ubuntu, you might need 'python3-venv': sudo apt install python3-venv${NC}"
@@ -158,21 +159,20 @@ echo -e "${BLUE}Activating virtual environment: source $VENV_ACTIVATE_PATH${NC}"
 if [ -f "$VENV_ACTIVATE_PATH" ]; then
     source "$VENV_ACTIVATE_PATH"
 else
-    echo -e "${RED}Virtual environment activation script not found: $VENV_ACTIVATE_PATH${NC}"
+    echo -e "${RED}Could not find activation script: $VENV_ACTIVATE_PATH${NC}"
     exit 1
 fi
 
 ######################################################################
-#  (Moved here) Pre-check for Rust/Cargo on Windows before pip install
+#  Pre-check for Rust/Cargo on Windows before pip install
 ######################################################################
 if [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
     if ! command -v cargo &> /dev/null; then
         echo -e "${YELLOW}Rust (Cargo) is not detected in your PATH.${NC}"
-        echo -e "${YELLOW}Some Python dependencies require Rust. Attempting to install Rust via rustup...${NC}"
+        echo -e "${YELLOW}Some Python dependencies require Rust. Installing Rust via rustup...${NC}"
         if command -v curl &> /dev/null; then
-            echo -e "${BLUE}Running: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh${NC}"
-            echo -e "${YELLOW}>>> Follow any prompts from the Rust installer. You might need to press Enter to accept defaults. <<<${NC}"
-            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+            echo -e "${BLUE}Running: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y${NC}"
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
             install_exit_code=$?
 
             if [ $install_exit_code -ne 0 ]; then
@@ -180,17 +180,17 @@ if [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; t
             fi
 
             # Try re-sourcing profiles to update PATH
-            echo -e "${BLUE}Checking for Cargo again after installation attempt...${NC}"
+            echo -e "${BLUE}Checking for Cargo again after installing Rust...${NC}"
             if [ -f ~/.bash_profile ]; then source ~/.bash_profile; fi
             if [ -f ~/.profile ]; then source ~/.profile; fi
             if [ -f ~/.bashrc ]; then source ~/.bashrc; fi
 
             if ! command -v cargo &> /dev/null; then
-                echo -e "${RED}Cargo is still not found after installation. You may need to restart your terminal for PATH to refresh.${NC}"
+                echo -e "${RED}Cargo not found after installation. You may need to restart your terminal for PATH changes.${NC}"
                 echo -e "${YELLOW}Please verify Rust installation manually and ensure cargo is on your PATH.${NC}"
                 exit 1
             else
-                echo -e "${GREEN}Rust (Cargo) is now installed.${NC}"
+                echo -e "${GREEN}Rust (Cargo) installed successfully and is now on PATH.${NC}"
             fi
         else
             echo -e "${RED}'curl' is not installed, so we can't auto-install Rust.${NC}"
@@ -205,37 +205,35 @@ fi
 #  End cargo check
 ######################################################################
 
-# Now install the Python dependencies
-echo -e "${BLUE}Attempting to install dependencies using '$PYTHON_CMD -m pip' from activated virtual environment...${NC}"
+# Now install Python dependencies
+echo -e "${BLUE}Installing dependencies with pip...${NC}"
 "$PYTHON_CMD" -m pip install --upgrade pip
 "$PYTHON_CMD" -m pip install -r requirements-server.txt
 pip_exit_code=$?
 
 if [ $pip_exit_code -ne 0 ]; then
     echo -e "${RED}Failed to install dependencies (Exit code: $pip_exit_code).${NC}"
-    echo -e "${YELLOW}Check the error above for clues (e.g., missing build tools, etc.).${NC}"
     exit 1
 else
     echo -e "${GREEN}Dependencies installed successfully.${NC}"
 fi
 
-# Step 2: Create config directory if it doesn't exist
-echo -e "\n${GREEN}Step 2: Creating config directory if needed...${NC}"
+# Step 2: Create config directory if needed
+echo -e "\n${GREEN}Step 2: Creating config directory...${NC}"
 mkdir -p config
 if [ ! -f config/info.json ]; then
     echo "{}" > config/info.json
-    echo -e "${BLUE}Created empty info.json file${NC}"
+    echo -e "${BLUE}Created empty info.json file.${NC}"
 fi
 
 # Step 3: Start frontend static server
 echo -e "\n${GREEN}Step 3: Starting frontend static file server on port 80...${NC}"
-echo -e "${YELLOW}Note: Running on port 80 may require administrator/root privileges.${NC}"
+echo -e "${YELLOW}Note: Running on port 80 may require admin/root privileges.${NC}"
 if [ -d "server-setting/frontend/dist" ]; then
-    cd server-setting/frontend/dist || { echo -e "${RED}Failed to enter server-setting/frontend/dist directory!${NC}"; exit 1; }
+    cd server-setting/frontend/dist || { echo -e "${RED}Failed to enter server-setting/frontend/dist!${NC}"; exit 1; }
     echo -e "${BLUE}Serving files from $(pwd) on port 80 in the background...${NC}"
 
     if command -v python &> /dev/null; then
-        echo -e "${BLUE}Using python command: $(command -v python)${NC}"
         if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
             start /B "" python -m http.server 80 &> frontend_server.log
         else
@@ -244,28 +242,28 @@ if [ -d "server-setting/frontend/dist" ]; then
         FRONTEND_PID=$!
         echo -e "${GREEN}Frontend server started in background (PID: $FRONTEND_PID). Log: $(pwd)/frontend_server.log${NC}"
     else
-        echo -e "${RED}Could not find 'python' command in PATH even after activating virtual environment.${NC}"
+        echo -e "${RED}Could not find 'python' command in PATH after activating virtual environment.${NC}"
         echo -e "${YELLOW}Cannot start frontend server.${NC}"
     fi
     cd ../../..
 else
-    echo -e "${YELLOW}Directory server-setting/frontend/dist not found. Skipping frontend server start.${NC}"
+    echo -e "${YELLOW}server-setting/frontend/dist not found. Skipping frontend server start.${NC}"
     echo -e "${YELLOW}Build the frontend app first (e.g., npm run build).${NC}"
 fi
 
 # Step 4: Run backend server
 echo -e "\n${GREEN}Step 4: Starting backend server...${NC}"
-echo -e "${YELLOW}The frontend is available at http://localhost:80${NC}"
-echo -e "${YELLOW}The backend API is running at http://localhost:8888${NC}"
+echo -e "${YELLOW}Frontend:  http://localhost:80${NC}"
+echo -e "${YELLOW}Backend:   http://localhost:8888${NC}"
 echo -e "${YELLOW}Press Ctrl+C to stop the backend server.${NC}"
 
 if command -v python &> /dev/null; then
     echo -e "${BLUE}Running backend server using: $(command -v python)${NC}"
     python server-setting/backend/main.py
 else
-    echo -e "${RED}Could not find 'python' command even after activating virtual environment.${NC}"
+    echo -e "${RED}Could not find 'python' command after virtual environment activation.${NC}"
     exit 1
 fi
 
-# Optional: If you want to kill the frontend server when this script exits:
-# trap "echo 'Stopping frontend server...'; kill $FRONTEND_PID 2>/dev/null" EXIT
+# Optional: If you want to kill the frontend server upon exit:
+# trap "echo 'Stopping frontend server...'; kill $FRONTEND_PID 2>/dev_
