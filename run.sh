@@ -46,21 +46,25 @@ echo -e "\n${GREEN}Step 1: Setting up virtual environment and installing backend
 if [ ! -d ".venv" ]; then
     echo -e "${BLUE}Creating virtual environment in .venv directory using '$PYTHON_CMD -m venv'...${NC}"
     venv_error_log="venv_creation_error.log"
-    "$PYTHON_CMD" -m venv .venv 2> "$venv_error_log"
+    # Use --clear to ensure a clean environment if .venv exists but is broken
+    "$PYTHON_CMD" -m venv .venv --clear 2> "$venv_error_log" 
     venv_exit_code=$?
 
     if [ $venv_exit_code -ne 0 ]; then
         echo -e "${RED}Failed to create virtual environment (Exit code: $venv_exit_code).${NC}"
         error_output=$(cat "$venv_error_log")
         is_debian_ubuntu=false
+        is_windows=false
         if [[ "$OSTYPE" == "linux-gnu"* ]]; then
              if [ -f /etc/debian_version ] || grep -qi "debian" /etc/os-release || grep -qi "ubuntu" /etc/os-release; then
                  is_debian_ubuntu=true
              fi
+        elif [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+            is_windows=true
         fi
 
         if $is_debian_ubuntu && echo "$error_output" | grep -q "ensurepip is not available"; then
-            suggested_package=$(echo "$error_output" | grep -o 'python3\.[0-9]*-venv' | head -n 1)
+            suggested_package=$(echo "$error_output" | grep -o 'python3\\.[0-9]*-venv' | head -n 1)
             if [ -z "$suggested_package" ]; then
                 suggested_package="python3-venv"
             fi
@@ -84,6 +88,11 @@ if [ ! -d ".venv" ]; then
             else
                  echo -e "${YELLOW}Skipping installation of $suggested_package.${NC}"
             fi
+        fi
+        # Add specific hint for Windows alias issue
+        if $is_windows && echo "$error_output" | grep -q "Python was not found"; then
+            echo -e "${YELLOW}Hint: On Windows, this error often occurs if the 'python' or 'python3' command executes the Microsoft Store alias instead of a full Python installation.${NC}"
+            echo -e "${YELLOW}Please ensure a full Python 3 installation (from python.org or elsewhere) is available and prioritized in your PATH, or disable the 'App execution aliases' for Python in Windows Settings.${NC}"
         fi
         echo -e "${RED}Virtual environment creation error details:${NC}"
         echo "$error_output"
