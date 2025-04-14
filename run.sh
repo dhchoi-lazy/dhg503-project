@@ -70,6 +70,14 @@ if ! command -v pip3 &> /dev/null; then
              echo -e "${YELLOW}Please install Homebrew (https://brew.sh/) and then run 'brew install python3', or install Python 3 manually.${NC}"
              exit 1
         fi
+    elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+        # Windows (Git Bash, MinGW, Cygwin)
+        echo -e "${BLUE}Detected Windows environment.${NC}"
+        echo -e "${YELLOW}Automatic pip installation is not supported on Windows via this script.${NC}"
+        echo -e "${YELLOW}Please download and install Python 3 from the official website: https://www.python.org/downloads/${NC}"
+        echo -e "${YELLOW}During installation, ensure you check the option 'Add Python to PATH' and that 'pip' is included.${NC}"
+        echo -e "${YELLOW}After installation, please close this terminal, open a new one, and re-run the script.${NC}"
+        exit 1
     else
         echo -e "${RED}Unsupported OS ($OSTYPE) for automatic pip3 installation.${NC}"
         echo -e "${YELLOW}Please install pip3 manually.${NC}"
