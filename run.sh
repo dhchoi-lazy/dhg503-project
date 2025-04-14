@@ -18,22 +18,36 @@ echo -e "${BLUE}==============================================${NC}"
 # Find a working Python 3 command
 PYTHON_CMD=""
 if command -v python3 &> /dev/null; then
-    PYTHON_CMD="python3"
-elif command -v python &> /dev/null; then
-    # Check if 'python' is Python 3
+    # Test if this python3 is functional
+    if python3 -c "import sys" &> /dev/null; then
+        PYTHON_CMD="python3"
+    else
+        echo -e "${YELLOW}Warning: 'python3' command found but seems non-functional (might be Windows Store alias). Trying 'python'...${NC}"
+    fi
+fi
+
+# If python3 wasn't functional or not found, try 'python'
+if [ -z "$PYTHON_CMD" ] && command -v python &> /dev/null; then
+    # Check if 'python' is Python 3 and functional
     py_version=$("python" -V 2>&1)
     if [[ $py_version == "Python 3"* ]]; then
-        PYTHON_CMD="python"
+        if python -c "import sys" &> /dev/null; then
+            PYTHON_CMD="python"
+        else
+            echo -e "${YELLOW}Warning: 'python' command found and is Python 3, but seems non-functional.${NC}"
+        fi
     fi
 fi
 
 if [ -z "$PYTHON_CMD" ]; then
-    echo -e "${RED}Python 3 is not found on PATH (checked 'python3' and 'python').${NC}"
+    echo -e "${RED}Could not find a functional Python 3 interpreter on PATH (checked 'python3' and 'python').${NC}"
     echo -e "${YELLOW}Please install Python 3.8 or later and ensure it is added to your PATH.${NC}"
+    echo -e "${YELLOW} * On Windows, ensure it's not the Microsoft Store alias or disable the alias.${NC}"
+    echo -e "${YELLOW} * On Debian/Ubuntu, ensure 'python3' is installed.${NC}"
     echo -e "${YELLOW}Download from: https://www.python.org/downloads/${NC}"
     exit 1
 else
-     echo -e "${GREEN}Using Python command: $PYTHON_CMD${NC}"
+     echo -e "${GREEN}Using functional Python command: $PYTHON_CMD${NC}"
      # Optional: Add a version check here if needed
      # "$PYTHON_CMD" -c "import sys; sys.exit(not (sys.version_info >= (3, 8)))"
      # if [ $? -ne 0 ]; then ... exit ... fi
@@ -42,12 +56,31 @@ fi
 # Step 1: Set up virtual environment and install backend dependencies
 echo -e "\n${GREEN}Step 1: Setting up virtual environment and installing backend dependencies...${NC}"
 
-# Create and activate virtual environment
-if [ ! -d ".venv" ]; then
-    echo -e "${BLUE}Creating virtual environment in .venv directory using '$PYTHON_CMD -m venv'...${NC}"
+# Define VENV paths early based on OS for the check later
+VENV_DIR=".venv"
+VENV_BIN_DIR="$VENV_DIR/bin" # Default for Linux/Darwin
+VENV_ACTIVATE_SCRIPT="activate"
+if [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+    VENV_BIN_DIR="$VENV_DIR/Scripts"
+    # activate script name is the same, but path differs
+fi
+VENV_ACTIVATE_PATH="$VENV_BIN_DIR/$VENV_ACTIVATE_SCRIPT"
+
+# Create virtual environment if it doesn't exist or seems incomplete
+venv_ok=false
+if [ -d "$VENV_DIR" ] && [ -f "$VENV_ACTIVATE_PATH" ]; then
+    echo -e "${BLUE}Virtual environment '$VENV_DIR' already exists and seems complete.${NC}"
+    venv_ok=true
+else
+    echo -e "${BLUE}Creating or refreshing virtual environment in '$VENV_DIR' using '$PYTHON_CMD -m venv'...${NC}"
+    # Remove potentially incomplete venv dir before creating
+    if [ -d "$VENV_DIR" ]; then
+      echo -e "${YELLOW}Removing existing potentially incomplete '$VENV_DIR'...${NC}"
+      rm -rf "$VENV_DIR"
+    fi
+
     venv_error_log="venv_creation_error.log"
-    # Use --clear to ensure a clean environment if .venv exists but is broken
-    "$PYTHON_CMD" -m venv .venv --clear 2> "$venv_error_log" 
+    "$PYTHON_CMD" -m venv "$VENV_DIR" 2> "$venv_error_log"
     venv_exit_code=$?
 
     if [ $venv_exit_code -ne 0 ]; then
@@ -63,77 +96,91 @@ if [ ! -d ".venv" ]; then
             is_windows=true
         fi
 
+        # Check for Ubuntu/Debian 'ensurepip' error specifically
         if $is_debian_ubuntu && echo "$error_output" | grep -q "ensurepip is not available"; then
-            suggested_package=$(echo "$error_output" | grep -o 'python3\\.[0-9]*-venv' | head -n 1)
-            if [ -z "$suggested_package" ]; then
-                suggested_package="python3-venv"
-            fi
-            echo -e "${YELLOW}This failure often means the '$suggested_package' package is missing.${NC}"
-            echo -e "${YELLOW}Would you like to attempt to install it using 'sudo apt install'? (y/n)${NC}"
-            read -r install_venv_choice
+             suggested_package=$(echo "$error_output" | grep -o 'python3\\.[0-9]*-venv' | head -n 1)
+             if [ -z "$suggested_package" ]; then
+                 suggested_package="python3-venv" # Default guess
+             fi
+             echo -e "${YELLOW}This failure often means the '$suggested_package' package is missing.${NC}"
+             echo -e "${YELLOW}Would you like to attempt to install it using 'sudo apt install'? (y/n)${NC}"
+             read -r install_venv_choice
 
-            if [[ $install_venv_choice == "y" || $install_venv_choice == "Y" ]]; then
-                echo -e "${BLUE}Attempting to install $suggested_package...${NC}"
-                sudo apt update && sudo apt install -y "$suggested_package"
-                install_exit_code=$?
-                if [ $install_exit_code -eq 0 ]; then
-                    echo -e "${GREEN}$suggested_package installation command executed successfully.${NC}"
-                    echo -e "${YELLOW}Please re-run this script to create the virtual environment.${NC}"
-                    rm -f "$venv_error_log"
-                    exit 0
-                else
-                    echo -e "${RED}Failed to install $suggested_package (Exit code: $install_exit_code).${NC}"
-                    echo -e "${RED}Please install it manually.${NC}"
-                fi
-            else
-                 echo -e "${YELLOW}Skipping installation of $suggested_package.${NC}"
-            fi
+             if [[ $install_venv_choice == "y" || $install_venv_choice == "Y" ]]; then
+                 echo -e "${BLUE}Attempting to install $suggested_package...${NC}"
+                 sudo apt update && sudo apt install -y "$suggested_package"
+                 install_exit_code=$?
+                 if [ $install_exit_code -eq 0 ]; then
+                     echo -e "${GREEN}$suggested_package installation command executed successfully.${NC}"
+                     echo -e "${YELLOW}Please re-run this script to create the virtual environment.${NC}"
+                     rm -f "$venv_error_log"
+                     exit 0
+                 else
+                     echo -e "${RED}Failed to install $suggested_package (Exit code: $install_exit_code).${NC}"
+                     echo -e "${RED}Please install it manually.${NC}"
+                 fi
+             else
+                  echo -e "${YELLOW}Skipping installation of $suggested_package.${NC}"
+             fi
         fi
-        # Add specific hint for Windows alias issue
+        # Check for Windows 'Python was not found' error
         if $is_windows && echo "$error_output" | grep -q "Python was not found"; then
-            echo -e "${YELLOW}Hint: On Windows, this error often occurs if the 'python' or 'python3' command executes the Microsoft Store alias instead of a full Python installation.${NC}"
+            echo -e "${YELLOW}Hint: On Windows, this error often occurs if the '$PYTHON_CMD' command executes the Microsoft Store alias instead of a full Python installation.${NC}"
             echo -e "${YELLOW}Please ensure a full Python 3 installation (from python.org or elsewhere) is available and prioritized in your PATH, or disable the 'App execution aliases' for Python in Windows Settings.${NC}"
         fi
         echo -e "${RED}Virtual environment creation error details:${NC}"
         echo "$error_output"
         rm -f "$venv_error_log"
         exit 1
+    else
+        # Venv command exit code was 0, BUT verify activation script exists
+        if [ ! -f "$VENV_ACTIVATE_PATH" ]; then
+             echo -e "${RED}Virtual environment created (exit code 0), but activation script '$VENV_ACTIVATE_PATH' is missing!${NC}"
+             if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+                 if [ -f /etc/debian_version ] || grep -qi "debian" /etc/os-release || grep -qi "ubuntu" /etc/os-release; then
+                      echo -e "${YELLOW}On Debian/Ubuntu systems, this usually means the 'python3-venv' package is not installed.${NC}"
+                      echo -e "${YELLOW}Please try installing it: sudo apt update && sudo apt install python3-venv${NC}"
+                 fi
+             fi
+             echo -e "${RED}Cannot proceed without a valid virtual environment.${NC}"
+             rm -f "$venv_error_log" # Clean up log file if it exists
+             exit 1
+        else
+             echo -e "${GREEN}Virtual environment created successfully in '$VENV_DIR'.${NC}"
+             venv_ok=true
+             rm -f "$venv_error_log" # Clean up log file if it exists
+        fi
     fi
-    rm -f "$venv_error_log"
-    echo -e "${GREEN}Virtual environment created successfully.${NC}"
+fi # End of venv creation/check block
+
+# Abort if venv setup wasn't successful for any reason
+if ! $venv_ok; then
+    echo -e "${RED}Virtual environment setup failed or was skipped. Cannot proceed.${NC}"
+    exit 1
 fi
 
 # Activate virtual environment (platform-specific)
-if [[ "$OSTYPE" == "linux-gnu"* ]] || [[ "$OSTYPE" == "darwin"* ]]; then
-    VENV_PYTHON=".venv/bin/python"
-    VENV_ACTIVATE=".venv/bin/activate"
-elif [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
-    VENV_PYTHON=".venv/Scripts/python.exe"
-    VENV_ACTIVATE=".venv/Scripts/activate"
+# Note: Paths ($VENV_ACTIVATE_PATH) are already defined above
+echo -e "${BLUE}Activating virtual environment: source $VENV_ACTIVATE_PATH${NC}"
+if [ -f "$VENV_ACTIVATE_PATH" ]; then
+    source "$VENV_ACTIVATE_PATH"
 else
-    echo -e "${YELLOW}Unknown OS type ($OSTYPE). Attempting standard activation...${NC}"
-    VENV_PYTHON=".venv/bin/python"
-    VENV_ACTIVATE=".venv/bin/activate"
-fi
-
-echo -e "${BLUE}Activating virtual environment: source $VENV_ACTIVATE${NC}"
-if [ -f "$VENV_ACTIVATE" ]; then
-    source "$VENV_ACTIVATE"
-else
-    echo -e "${RED}Virtual environment activation script not found: $VENV_ACTIVATE${NC}"
+    # This check should theoretically be redundant now due to earlier checks, but kept as a safeguard
+    echo -e "${RED}Virtual environment activation script not found: $VENV_ACTIVATE_PATH${NC}"
     echo -e "${RED}Cannot proceed without activating the virtual environment.${NC}"
     exit 1
 fi
 
 # Install dependencies using the virtual environment's python/pip
-echo -e "${BLUE}Attempting to install dependencies using 'python -m pip' from virtual environment...${NC}"
-python -m pip install --upgrade pip # Ensure pip is up-to-date within venv
-python -m pip install -r requirements-server.txt
+# Use $PYTHON_CMD which should be python/python3 from the *activated* venv now
+echo -e "${BLUE}Attempting to install dependencies using '$PYTHON_CMD -m pip' from activated virtual environment...${NC}"
+"$PYTHON_CMD" -m pip install --upgrade pip # Ensure pip is up-to-date within venv
+"$PYTHON_CMD" -m pip install -r requirements-server.txt
 pip_exit_code=$?
 
 # Check final status
 if [ $pip_exit_code -ne 0 ]; then
-    echo -e "${RED}Failed to install dependencies from requirements-server.txt using 'python -m pip' (Exit code: $pip_exit_code).${NC}"
+    echo -e "${RED}Failed to install dependencies from requirements-server.txt using '$PYTHON_CMD -m pip' (Exit code: $pip_exit_code).${NC}"
     echo -e "${RED}Please check requirements-server.txt and network connection.${NC}"
     exit 1
 else
