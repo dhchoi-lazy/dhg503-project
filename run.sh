@@ -97,12 +97,15 @@ else
         fi
 
         # Check for Ubuntu/Debian 'ensurepip' error specifically
-        if $is_debian_ubuntu && echo "$error_output" | grep -q "ensurepip is not available"; then
-             suggested_package=$(echo "$error_output" | grep -o 'python3\\.[0-9]*-venv' | head -n 1)
+        if $is_debian_ubuntu && echo "$error_output" | grep -q "ensurepip"; then
+             # Try to extract the specific package suggestion if available
+             suggested_package=$(echo "$error_output" | grep -o 'python3\.[0-9.]*-venv' | head -n 1)
+             # Fallback if specific version not found in the message
              if [ -z "$suggested_package" ]; then
                  suggested_package="python3-venv" # Default guess
              fi
-             echo -e "${YELLOW}This failure often means the '$suggested_package' package is missing.${NC}"
+             echo -e "${YELLOW}The error suggests the Python venv module (ensurepip) is missing.${NC}"
+             echo -e "${YELLOW}On Debian/Ubuntu, this usually requires the '$suggested_package' package.${NC}"
              echo -e "${YELLOW}Would you like to attempt to install it using 'sudo apt install'? (y/n)${NC}"
              read -r install_venv_choice
 
@@ -181,7 +184,22 @@ pip_exit_code=$?
 # Check final status
 if [ $pip_exit_code -ne 0 ]; then
     echo -e "${RED}Failed to install dependencies from requirements-server.txt using '$PYTHON_CMD -m pip' (Exit code: $pip_exit_code).${NC}"
-    echo -e "${RED}Please check requirements-server.txt and network connection.${NC}"
+    # Check if the error is related to missing Rust/Cargo
+    # Capture pip's error output if possible (might require redirecting stderr from pip command)
+    # For simplicity, we'll just check the exit code here and provide general + specific hints.
+    # A more robust solution would capture stderr from the pip command above.
+    echo -e "${YELLOW}Checking common installation issues...${NC}"
+    if [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+         echo -e "${YELLOW}Hint: Some Python packages require build tools. On Windows, you might need Microsoft C++ Build Tools (available via Visual Studio Installer).${NC}"
+         echo -e "${YELLOW}Hint: If the error mentions 'Rust' or 'Cargo', you need to install the Rust toolchain from https://rustup.rs/${NC}"
+    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+         echo -e "${YELLOW}Hint: Some Python packages require build tools. On Debian/Ubuntu, you might need 'build-essential' and 'python3-dev' (e.g., sudo apt install build-essential python3-dev).${NC}"
+         echo -e "${YELLOW}Hint: If the error mentions 'Rust' or 'Cargo', you need to install the Rust toolchain. Often 'sudo apt install cargo' works, or use the recommended method from https://rustup.rs/${NC}"
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+         echo -e "${YELLOW}Hint: Some Python packages require build tools. On macOS, you might need Xcode Command Line Tools (run 'xcode-select --install').${NC}"
+         echo -e "${YELLOW}Hint: If the error mentions 'Rust' or 'Cargo', you need to install the Rust toolchain from https://rustup.rs/${NC}"
+    fi
+    echo -e "${RED}Please check the error messages above, requirements-server.txt, and your network connection.${NC}"
     exit 1
 else
     echo -e "${GREEN}Dependencies installed successfully.${NC}"
