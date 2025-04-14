@@ -53,31 +53,6 @@ else
      # if [ $? -ne 0 ]; then ... exit ... fi
 fi
 
-# --- Pre-check for Rust/Cargo on Windows ---
-if [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
-    if ! command -v cargo &> /dev/null; then
-        echo -e "${YELLOW}Rust (Cargo) is not detected in your PATH.${NC}"
-        echo -e "${YELLOW}Some Python dependencies on Windows require Rust to compile.${NC}"
-        if command -v curl &> /dev/null; then
-            echo -e "${BLUE}Please install the Rust toolchain by running the following command in your terminal:${NC}"
-            echo -e "${GREEN}    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh${NC}"
-            echo -e "${YELLOW}Follow the prompts in the installer. You may need to restart your terminal after installation.${NC}"
-            echo -e "${YELLOW}Once Rust is installed, re-run this script (${0}).${NC}"
-            exit 1 # Exit so user can run the command
-        else
-            echo -e "${RED}'curl' command is not found.${NC}"
-            echo -e "${RED}Cannot provide the automatic Rust installation command.${NC}"
-            echo -e "${YELLOW}Please install 'curl' first, or install Rust manually from https://rustup.rs/${NC}"
-            echo -e "${YELLOW}Once Rust is installed, re-run this script (${0}).${NC}"
-            exit 1
-        fi
-    # else
-        # Optional: Add message if cargo *is* found
-        # echo -e "${BLUE}Rust (Cargo) detected.${NC}"
-    fi
-fi
-# --- End Pre-check ---
-
 # Step 1: Set up virtual environment and install backend dependencies
 echo -e "\n${GREEN}Step 1: Setting up virtual environment and installing backend dependencies...${NC}"
 
@@ -285,3 +260,51 @@ fi
 
 # Optional: Clean up background process on exit (may not work reliably across platforms)
 # trap "echo 'Stopping frontend server...'; kill $FRONTEND_PID 2>/dev/null" EXIT 
+
+# --- Pre-check for Rust/Cargo on Windows ---
+if [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+    if ! command -v cargo &> /dev/null; then
+        echo -e "${YELLOW}Rust (Cargo) is not detected in your PATH.${NC}"
+        echo -e "${YELLOW}Some Python dependencies require Rust. Attempting to install Rust via rustup...${NC}"
+        if command -v curl &> /dev/null; then
+            echo -e "${BLUE}Running: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh${NC}"
+            echo -e "${YELLOW}>>> Please follow any prompts from the Rust installer in your terminal. <<<${NC}"
+            echo -e "${YELLOW}>>> You might need to press Enter to accept defaults. <<<${NC}"
+            # Execute the installer command directly
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+            install_exit_code=$?
+
+            if [ $install_exit_code -ne 0 ]; then
+                 echo -e "${RED}Rust installation command finished with a non-zero exit code ($install_exit_code).${NC}"
+            fi
+
+            # Re-check if cargo is now available (PATH might need update, but check anyway)
+            echo -e "${BLUE}Checking for Cargo again after installation attempt...${NC}"
+            # Source profile files common in Git Bash to potentially pick up PATH changes
+            # This might not always work reliably depending on user setup.
+            if [ -f ~/.bash_profile ]; then source ~/.bash_profile; fi
+            if [ -f ~/.profile ]; then source ~/.profile; fi
+            if [ -f ~/.bashrc ]; then source ~/.bashrc; fi
+
+            if ! command -v cargo &> /dev/null; then
+                 echo -e "${RED}Cargo still not found after installation attempt.${NC}"
+                 echo -e "${YELLOW}Installation might have failed, or you may need to restart your terminal/system for PATH changes to take effect.${NC}"
+                 echo -e "${YELLOW}Please verify Rust installation manually (check https://rustup.rs/) and ensure Cargo is in your PATH.${NC}"
+                 echo -e "${YELLOW}Re-run this script (${0}) after confirming Rust installation.${NC}"
+                 exit 1
+            else
+                 echo -e "${GREEN}Rust (Cargo) seems to be installed now.${NC}"
+            fi
+        else
+            echo -e "${RED}'curl' command is not found.${NC}"
+            echo -e "${RED}Cannot attempt automatic Rust installation.${NC}"
+            echo -e "${YELLOW}Please install 'curl' first, or install Rust manually from https://rustup.rs/${NC}"
+            echo -e "${YELLOW}Once Rust is installed, re-run this script (${0}).${NC}"
+            exit 1
+        fi
+    else
+        # Optional: Add message if cargo *is* found
+        echo -e "${BLUE}Rust (Cargo) detected.${NC}"
+    fi
+fi
+# --- End Pre-check --- 
