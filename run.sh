@@ -218,22 +218,22 @@ echo -e "\n${GREEN}Step 3: Starting frontend static file server on port 80...${N
 echo -e "${YELLOW}Note: Running on port 80 may require administrator/root privileges.${NC}"
 if [ -d "server-setting/frontend/dist" ]; then
     cd server-setting/frontend/dist || { echo -e "${RED}Failed to enter server-setting/frontend/dist directory!${NC}"; exit 1; }
-    echo -e "${BLUE}Serving files from $(pwd) on port 80 in the background using venv python...${NC}"
+    echo -e "${BLUE}Serving files from $(pwd) on port 80 in the background using activated venv python...${NC}"
 
-    # Use python from the virtual environment (path relative to dist dir)
-    VENV_PYTHON_REL="../../../$VENV_PYTHON"
-
-    if [ -f "$VENV_PYTHON_REL" ]; then
-        echo -e "${BLUE}Using virtual environment python: $VENV_PYTHON_REL${NC}"
+    # Use python from the activated virtual environment (should be in PATH)
+    if command -v python &> /dev/null; then
+        echo -e "${BLUE}Using python command found in PATH (expected from venv): $(command -v python)${NC}"
         if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
-             start /B "" "$VENV_PYTHON_REL" -m http.server 80 &> frontend_server.log
+             # Use python from PATH
+             start /B "" python -m http.server 80 &> frontend_server.log
         else
-             nohup "$VENV_PYTHON_REL" -m http.server 80 &> frontend_server.log &
+             # Use python from PATH
+             nohup python -m http.server 80 &> frontend_server.log &
         fi
         FRONTEND_PID=$! # Note: Getting PID might be unreliable with 'start /B' on Windows
         echo -e "${GREEN}Frontend server started in background (PID: $FRONTEND_PID might be inaccurate on Windows). Log: $(pwd)/frontend_server.log${NC}"
     else
-        echo -e "${RED}Virtual environment python not found at expected path: $VENV_PYTHON_REL${NC}"
+        echo -e "${RED}Could not find 'python' command in PATH even after activating virtual environment.${NC}"
         echo -e "${YELLOW}Cannot start frontend server.${NC}"
     fi
     cd ../../.. # Go back to project root
