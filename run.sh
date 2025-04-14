@@ -23,9 +23,58 @@ fi
 
 # Check if pip is installed
 if ! command -v pip3 &> /dev/null; then
-    echo -e "${RED}pip3 is not installed. Please install pip for Python 3.${NC}"
-    echo -e "${YELLOW}You can usually install it with 'sudo apt update && sudo apt install python3-pip' on Debian/Ubuntu or 'brew install python3' on macOS.${NC}"
-    exit 1
+    echo -e "${RED}pip3 is not installed.${NC}"
+    echo -e "${YELLOW}Would you like to attempt automatic installation? (Requires sudo/admin privileges) (y/n)${NC}"
+    read -r install_pip_choice
+
+    if [[ $install_pip_choice != "y" && $install_pip_choice != "Y" ]]; then
+        echo -e "${YELLOW}Skipping pip3 installation. Please install it manually.${NC}"
+        echo -e "${YELLOW}You can usually install it with 'sudo apt update && sudo apt install python3-pip' on Debian/Ubuntu or 'brew install python3' on macOS.${NC}"
+        exit 1
+    fi
+
+    echo -e "${BLUE}Attempting to install pip3...${NC}"
+    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        # Try to detect Debian/Ubuntu based systems
+        if [ -f /etc/debian_version ] || grep -qi "debian" /etc/os-release || grep -qi "ubuntu" /etc/os-release; then
+            echo -e "${BLUE}Detected Debian/Ubuntu based system. Running: sudo apt update && sudo apt install python3-pip${NC}"
+            sudo apt update && sudo apt install -y python3-pip
+            if [ $? -eq 0 ]; then
+                 echo -e "${GREEN}pip3 installation command executed successfully.${NC}"
+                 echo -e "${YELLOW}Please re-run this script.${NC}"
+                 exit 0
+            else
+                 echo -e "${RED}pip3 installation failed. Please install it manually.${NC}"
+                 exit 1
+            fi
+        else
+            echo -e "${YELLOW}Detected Linux, but not Debian/Ubuntu. Cannot automatically install pip3.${NC}"
+            echo -e "${YELLOW}Please install pip3 using your distribution's package manager.${NC}"
+            exit 1
+        fi
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        if command -v brew &> /dev/null; then
+             echo -e "${BLUE}Detected macOS with Homebrew. Running: brew install python3${NC}"
+             # brew install python3 often includes pip3
+             brew install python3
+             if [ $? -eq 0 ]; then
+                 echo -e "${GREEN}Homebrew command executed. This should install/update python3 and pip3.${NC}"
+                 echo -e "${YELLOW}Please re-run this script.${NC}"
+                 exit 0
+             else
+                 echo -e "${RED}Homebrew command failed. Please install python3/pip3 manually.${NC}"
+                 exit 1
+             fi
+        else
+             echo -e "${RED}Detected macOS, but Homebrew is not installed.${NC}"
+             echo -e "${YELLOW}Please install Homebrew (https://brew.sh/) and then run 'brew install python3', or install Python 3 manually.${NC}"
+             exit 1
+        fi
+    else
+        echo -e "${RED}Unsupported OS ($OSTYPE) for automatic pip3 installation.${NC}"
+        echo -e "${YELLOW}Please install pip3 manually.${NC}"
+        exit 1
+    fi
 fi
 
 # Step 1: Set up virtual environment and install backend dependencies
