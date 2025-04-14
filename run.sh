@@ -91,11 +91,61 @@ echo -e "\n${GREEN}Step 1: Setting up virtual environment and installing backend
 # Create and activate virtual environment
 if [ ! -d ".venv" ]; then
     echo -e "${BLUE}Creating virtual environment in .venv directory using python3 -m venv...${NC}"
-    python3 -m venv .venv
-    if [ $? -ne 0 ]; then
-        echo -e "${RED}Failed to create virtual environment.${NC}"
-        exit 1
+    # Capture stderr to check for specific errors
+    venv_error_log="venv_creation_error.log"
+    python3 -m venv .venv 2> "$venv_error_log"
+    venv_exit_code=$?
+
+    if [ $venv_exit_code -ne 0 ]; then
+        echo -e "${RED}Failed to create virtual environment (Exit code: $venv_exit_code).${NC}"
+        error_output=$(cat "$venv_error_log")
+        # Check if it's the specific Debian/Ubuntu ensurepip/venv issue
+        is_debian_ubuntu=false
+        if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+             if [ -f /etc/debian_version ] || grep -qi "debian" /etc/os-release || grep -qi "ubuntu" /etc/os-release; then
+                 is_debian_ubuntu=true
+             fi
+        fi
+
+        if $is_debian_ubuntu && echo "$error_output" | grep -q "ensurepip is not available"; then
+            # Try to extract the specific package name suggested by the error
+            suggested_package=$(echo "$error_output" | grep -o 'python3\.[0-9]*-venv' | head -n 1)
+            if [ -z "$suggested_package" ]; then
+                suggested_package="python3-venv" # Default if extraction fails
+            fi
+            echo -e "${YELLOW}This failure often means the '$suggested_package' package is missing.${NC}"
+            echo -e "${YELLOW}Would you like to attempt to install it using 'sudo apt install'? (y/n)${NC}"
+            read -r install_venv_choice
+
+            if [[ $install_venv_choice == "y" || $install_venv_choice == "Y" ]]; then
+                echo -e "${BLUE}Attempting to install $suggested_package...${NC}"
+                sudo apt update && sudo apt install -y "$suggested_package"
+                install_exit_code=$?
+                if [ $install_exit_code -eq 0 ]; then
+                    echo -e "${GREEN}$suggested_package installation command executed successfully.${NC}"
+                    echo -e "${YELLOW}Please re-run this script to create the virtual environment.${NC}"
+                    rm -f "$venv_error_log" # Clean up log
+                    exit 0 # Exit successfully, prompting user to restart
+                else
+                    echo -e "${RED}Failed to install $suggested_package (Exit code: $install_exit_code).${NC}"
+                    echo -e "${RED}Please install it manually.${NC}"
+                    # Fall through to show original error
+                fi
+            else
+                 echo -e "${YELLOW}Skipping installation of $suggested_package.${NC}"
+                 # Fall through to show original error
+            fi
+        fi
+
+        # If not the specific error, or user skipped install, or install failed, show original error
+        echo -e "${RED}Virtual environment creation error details:${NC}"
+        echo "$error_output"
+        rm -f "$venv_error_log" # Clean up log
+        exit 1 # Exit with failure
     fi
+    # If venv creation succeeded, clean up log file
+    rm -f "$venv_error_log"
+    echo -e "${GREEN}Virtual environment created successfully.${NC}"
 fi
 
 # Activate virtual environment (platform-specific)
@@ -109,11 +159,33 @@ else
 fi
 
 # Install dependencies from root requirements-server.txt using pip
-echo -e "${BLUE}Installing dependencies using pip...${NC}"
+echo -e "${BLUE}Attempting to install dependencies using pip...${NC}"
+
+# Try pip3 first
 pip3 install -r requirements-server.txt
-if [ $? -ne 0 ]; then
-    echo -e "${RED}Failed to install dependencies from requirements-server.txt.${NC}"
+pip_exit_code=$?
+
+# If pip3 fails, try python3 -m pip
+if [ $pip_exit_code -ne 0 ]; then
+    echo -e "${YELLOW}Initial 'pip3 install' failed (Exit code: $pip_exit_code). Trying 'python3 -m pip install'...${NC}"
+    python3 -m pip install -r requirements-server.txt
+    pip_exit_code=$?
+fi
+
+# If python3 -m pip fails, try python -m pip
+if [ $pip_exit_code -ne 0 ]; then
+    echo -e "${YELLOW}'python3 -m pip install' failed (Exit code: $pip_exit_code). Trying 'python -m pip install'...${NC}"
+    python -m pip install -r requirements-server.txt
+    pip_exit_code=$?
+fi
+
+# Check final status
+if [ $pip_exit_code -ne 0 ]; then
+    echo -e "${RED}Failed to install dependencies from requirements-server.txt using pip3, python3 -m pip, and python -m pip (Final exit code: $pip_exit_code).${NC}"
+    echo -e "${RED}Please check your Python/pip installation and ensure the virtual environment is activated correctly.${NC}"
     exit 1
+else
+    echo -e "${GREEN}Dependencies installed successfully.${NC}"
 fi
 
 # Step 2: Create config directory if it doesn't exist
