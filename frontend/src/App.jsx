@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="/explorer" element={<Explorer />} />
+
           <Route path="/statistics" element={<Statistics />} />
           <Route path="/network" element={<Network />} />
           <Route path="/mytable" element={<MyTable />} />
